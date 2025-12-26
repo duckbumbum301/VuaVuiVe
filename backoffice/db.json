@@ -284,7 +284,7 @@
       "name": "Nho nhập khẩu (500g)",
       "category": "Rau củ",
       "price": 120000,
-      "stock": 50,
+      "stock": 47,
       "image": "..\\images\\bsthieu\\nhonhaukhau.png",
       "status": "active"
     },
@@ -9084,6 +9084,201 @@
           "at": null
         }
       ]
+    },
+    {
+      "id": "ORD-20251111-225353-69HG3Y",
+      "customerName": "Trần Duy Thanh Đẹp Trai",
+      "phone": "0123456666",
+      "address": "Vietcombank, Lê Trọng Tấn, Bình Đường 2, Phường Dĩ An, Thành phố Hồ Chí Minh, 75350, Việt Nam",
+      "email": "tranduythanh1@gmail.com",
+      "user": {
+        "name": "Trần Duy Thanh Đẹp Trai",
+        "phone": "0123456666",
+        "address": "Vietcombank, Lê Trọng Tấn, Bình Đường 2, Phường Dĩ An, Thành phố Hồ Chí Minh, 75350, Việt Nam"
+      },
+      "slot": "2025-11-11_18:00-20:00",
+      "voucher": "FREESHIP",
+      "paymentMethod": "VNPAY",
+      "note": "",
+      "status": "delivered",
+      "delivery_status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 360000,
+      "shipping_fee": 0,
+      "discount": 0,
+      "totalAmount": 360000,
+      "total": 360000,
+      "items": {
+        "231": 3
+      },
+      "created_at": "2025-11-11T15:53:53.040Z",
+      "tracking": [
+        {
+          "code": "placed",
+          "label": "Đã đặt hàng",
+          "at": "2025-11-11T15:53:53.040Z"
+        },
+        {
+          "code": "preparing",
+          "label": "Đang chuẩn bị",
+          "at": "2025-11-11T15:55:28.260Z"
+        },
+        {
+          "code": "ready",
+          "label": "Sẵn sàng giao",
+          "at": "2025-11-11T15:55:35.488Z"
+        },
+        {
+          "code": "pickup",
+          "label": "Shipper đã nhận",
+          "at": "2025-11-11T15:55:46.584Z"
+        },
+        {
+          "code": "delivering",
+          "label": "Đang giao",
+          "at": "2025-11-11T15:55:54.000Z"
+        },
+        {
+          "code": "delivered",
+          "label": "Giao thành công",
+          "at": "2025-11-11T15:56:02.442Z"
+        }
+      ],
+      "paid_at": "2025-11-11T15:54:46.244Z",
+      "updatedAt": "2025-11-11T15:56:02.442Z",
+      "updated_at": "2025-11-11T15:56:02.442Z",
+      "updated_by": "ilovetranduythanh@gmail.com"
+    },
+    {
+      "id": "ORD-20251111-225659-0R4IVQ",
+      "customerName": "Trần Duy Thanh Đẹp Trai",
+      "phone": "0123456666",
+      "address": "Vietcombank, Lê Trọng Tấn, Bình Đường 2, Phường Dĩ An, Thành phố Hồ Chí Minh, 75350, Việt Nam",
+      "email": "tranduythanh1@gmail.com",
+      "user": {
+        "name": "Trần Duy Thanh Đẹp Trai",
+        "phone": "0123456666",
+        "address": "Vietcombank, Lê Trọng Tấn, Bình Đường 2, Phường Dĩ An, Thành phố Hồ Chí Minh, 75350, Việt Nam"
+      },
+      "slot": "2025-11-10_09:00-11:00",
+      "voucher": "VUA50",
+      "paymentMethod": "VNPAY",
+      "note": "",
+      "status": "cancelled",
+      "delivery_status": "cancelled",
+      "payment_status": "failed",
+      "subtotal": 840000,
+      "shipping_fee": 0,
+      "discount": 420000,
+      "totalAmount": 420000,
+      "total": 420000,
+      "items": {
+        "231": 7
+      },
+      "created_at": "2025-11-11T15:56:59.619Z",
+      "tracking": [
+        {
+          "code": "placed",
+          "label": "Đã đặt hàng",
+          "at": "2025-11-11T15:56:59.619Z"
+        },
+        {
+          "code": "preparing",
+          "label": "Đang chuẩn bị",
+          "at": null
+        },
+        {
+          "code": "ready",
+          "label": "Sẵn sàng giao",
+          "at": null
+        },
+        {
+          "code": "pickup",
+          "label": "Shipper đã nhận",
+          "at": null
+        },
+        {
+          "code": "delivering",
+          "label": "Đang giao",
+          "at": null
+        },
+        {
+          "code": "delivered",
+          "label": "Giao thành công",
+          "at": null
+        }
+      ],
+      "payment_failed_reason": "Giao dịch không thành công do: Khách hàng hủy giao dịch",
+      "payment_failed_at": "2025-11-11T15:58:24.217Z",
+      "updatedAt": "2025-11-11T15:58:24.217Z"
+    },
+    {
+      "id": "ORD-20251220-231536-SE5PGU",
+      "customerName": "Trần Duy Thanh Đẹp Trai",
+      "phone": "0123456666",
+      "address": "Vietcombank, Lê Trọng Tấn, Bình Đường 2, Phường Dĩ An, Thành phố Hồ Chí Minh, 75350, Việt Nam",
+      "email": "tranduythanh1@gmail.com",
+      "user": {
+        "name": "Trần Duy Thanh Đẹp Trai",
+        "phone": "0123456666",
+        "address": "Vietcombank, Lê Trọng Tấn, Bình Đường 2, Phường Dĩ An, Thành phố Hồ Chí Minh, 75350, Việt Nam"
+      },
+      "slot": "2025-12-19_09:00-11:00",
+      "voucher": "",
+      "paymentMethod": "VNPAY",
+      "note": "",
+      "status": "placed",
+      "delivery_status": "placed",
+      "payment_status": "pending",
+      "subtotal": 1130000,
+      "shipping_fee": 0,
+      "discount": 0,
+      "totalAmount": 1130000,
+      "total": 1130000,
+      "items": {
+        "300": 1,
+        "301": 2,
+        "311": 3,
+        "320": 1,
+        "321": 1,
+        "330": 1,
+        "331": 2,
+        "340": 1,
+        "341": 2
+      },
+      "created_at": "2025-12-20T16:15:36.997Z",
+      "tracking": [
+        {
+          "code": "placed",
+          "label": "Đã đặt hàng",
+          "at": "2025-12-20T16:15:36.997Z"
+        },
+        {
+          "code": "preparing",
+          "label": "Đang chuẩn bị",
+          "at": null
+        },
+        {
+          "code": "ready",
+          "label": "Sẵn sàng giao",
+          "at": null
+        },
+        {
+          "code": "pickup",
+          "label": "Shipper đã nhận",
+          "at": null
+        },
+        {
+          "code": "delivering",
+          "label": "Đang giao",
+          "at": null
+        },
+        {
+          "code": "delivered",
+          "label": "Giao thành công",
+          "at": null
+        }
+      ]
     }
   ],
   "users": [
@@ -13237,6 +13432,149 @@
         "total": 2500000
       },
       "timestamp": "2025-11-11T13:28:59.444Z"
+    },
+    {
+      "id": "1762876432897jr41i",
+      "action": "profile.update",
+      "who": "tranduythanh1@gmail.com",
+      "metadata": {
+        "userId": "1762860450462",
+        "changes": {
+          "name": "Trần Duy Thanh Đẹp Trai",
+          "address": "Vietcombank, Lê Trọng Tấn, Bình Đường 2, Phường Dĩ An, Thành phố Hồ Chí Minh, 75350, Việt Nam"
+        }
+      },
+      "timestamp": "2025-11-11T15:53:52.897Z"
+    },
+    {
+      "id": "1762876433122e1q5d",
+      "action": "order.create",
+      "who": "tranduythanh1@gmail.com",
+      "metadata": {
+        "orderId": "ORD-20251111-225353-69HG3Y",
+        "total": 360000
+      },
+      "timestamp": "2025-11-11T15:53:53.122Z"
+    },
+    {
+      "id": "1762876486295iyyr4",
+      "action": "mark_paid",
+      "who": "System",
+      "metadata": {
+        "orderId": "ORD-20251111-225353-69HG3Y"
+      },
+      "timestamp": "2025-11-11T15:54:46.295Z"
+    },
+    {
+      "id": "17628765282911a7or",
+      "action": "update_order_status",
+      "who": "ilovetranduythanh@gmail.com",
+      "metadata": {
+        "orderId": "ORD-20251111-225353-69HG3Y",
+        "oldStatus": "placed",
+        "newStatus": "preparing"
+      },
+      "timestamp": "2025-11-11T15:55:28.291Z"
+    },
+    {
+      "id": "17628765355317jhc3",
+      "action": "update_order_status",
+      "who": "ilovetranduythanh@gmail.com",
+      "metadata": {
+        "orderId": "ORD-20251111-225353-69HG3Y",
+        "oldStatus": "preparing",
+        "newStatus": "ready"
+      },
+      "timestamp": "2025-11-11T15:55:35.531Z"
+    },
+    {
+      "id": "1762876546627w1fbk",
+      "action": "update_order_status",
+      "who": "ilovetranduythanh@gmail.com",
+      "metadata": {
+        "orderId": "ORD-20251111-225353-69HG3Y",
+        "oldStatus": "ready",
+        "newStatus": "pickup"
+      },
+      "timestamp": "2025-11-11T15:55:46.627Z"
+    },
+    {
+      "id": "17628765540423omam",
+      "action": "update_order_status",
+      "who": "ilovetranduythanh@gmail.com",
+      "metadata": {
+        "orderId": "ORD-20251111-225353-69HG3Y",
+        "oldStatus": "pickup",
+        "newStatus": "delivering"
+      },
+      "timestamp": "2025-11-11T15:55:54.042Z"
+    },
+    {
+      "id": "1762876562486v60n4",
+      "action": "update_order_status",
+      "who": "ilovetranduythanh@gmail.com",
+      "metadata": {
+        "orderId": "ORD-20251111-225353-69HG3Y",
+        "oldStatus": "delivering",
+        "newStatus": "delivered"
+      },
+      "timestamp": "2025-11-11T15:56:02.486Z"
+    },
+    {
+      "id": "1762876619579y5e80",
+      "action": "profile.update",
+      "who": "tranduythanh1@gmail.com",
+      "metadata": {
+        "userId": "1762860450462",
+        "changes": {
+          "name": "Trần Duy Thanh Đẹp Trai",
+          "address": "Vietcombank, Lê Trọng Tấn, Bình Đường 2, Phường Dĩ An, Thành phố Hồ Chí Minh, 75350, Việt Nam"
+        }
+      },
+      "timestamp": "2025-11-11T15:56:59.579Z"
+    },
+    {
+      "id": "17628766196692u2jk",
+      "action": "order.create",
+      "who": "tranduythanh1@gmail.com",
+      "metadata": {
+        "orderId": "ORD-20251111-225659-0R4IVQ",
+        "total": 420000
+      },
+      "timestamp": "2025-11-11T15:56:59.669Z"
+    },
+    {
+      "id": "17628767042631rsjz",
+      "action": "mark_payment_failed",
+      "who": "System",
+      "metadata": {
+        "orderId": "ORD-20251111-225659-0R4IVQ",
+        "reason": "Giao dịch không thành công do: Khách hàng hủy giao dịch"
+      },
+      "timestamp": "2025-11-11T15:58:24.263Z"
+    },
+    {
+      "id": "1766247336917891xk",
+      "action": "profile.update",
+      "who": "tranduythanh1@gmail.com",
+      "metadata": {
+        "userId": "1762860450462",
+        "changes": {
+          "name": "Trần Duy Thanh Đẹp Trai",
+          "address": "Vietcombank, Lê Trọng Tấn, Bình Đường 2, Phường Dĩ An, Thành phố Hồ Chí Minh, 75350, Việt Nam"
+        }
+      },
+      "timestamp": "2025-12-20T16:15:36.917Z"
+    },
+    {
+      "id": "1766247337025uy5mm",
+      "action": "order.create",
+      "who": "tranduythanh1@gmail.com",
+      "metadata": {
+        "orderId": "ORD-20251220-231536-SE5PGU",
+        "total": 1130000
+      },
+      "timestamp": "2025-12-20T16:15:37.025Z"
     }
   ]
 }

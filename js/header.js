@@ -20,7 +20,7 @@ function buildHeaderHTML() {
     </svg>`;
 
   // Trang chủ mong muốn: Home/Hôm
-  const homeHref = "/Home/H%C3%B4m/index.html";
+  const homeHref = "../Home/H%C3%B4m/index.html";
   const isHome = /\/html\/index\.html$/i.test(location.pathname);
   const catalogHref = isHome ? "#catalog" : "/html/index.html#catalog";
   const makeProductHref = (id) => {
@@ -32,10 +32,9 @@ function buildHeaderHTML() {
 
   return `
     <div class="container header__row">
-      <a href="${homeHref}" class="logo" aria-label="Trang chủ Vựa Vui Vẻ"><img src="/images/brand/LogoVVV.png" alt="Vựa Vui Vẻ" class="logo__img" /></a>
+      <a href="${homeHref}" class="logo" aria-label="Trang chủ Vựa Vui Vẻ"><img src="../images/brand/LogoVVV.png" alt="Vựa Vui Vẻ" class="logo__img" /></a>
       <nav class="nav" aria-label="Điều hướng chính">
         <div class="nav-item nav-item--dropdown" aria-expanded="false">
-          <a href="/html/index.html" class="nav-link" id="productsMenuLink">Sản phẩm</a>
           <button
             class="nav-link nav-link--dropdown"
             id="productsMenuToggle"
@@ -43,7 +42,9 @@ function buildHeaderHTML() {
             aria-haspopup="true"
             aria-controls="productsMegaMenu"
             aria-label="Mở menu Sản phẩm"
+            type="button"
           >
+            Sản phẩm
             <svg
               class="nav-arrow"
               width="12"
@@ -488,6 +489,8 @@ function buildHeaderHTML() {
           </div>
         </div>
         <a href="/html/recipes.html">Công thức</a>
+        <a href="/html/recommended.html">Gợi ý cá nhân</a>
+        <a href="/html/season.html">Theo mùa</a>
         <a href="/html/aboutus.html">Giới thiệu</a>
       </nav>
       <div class="searchbox" role="search">

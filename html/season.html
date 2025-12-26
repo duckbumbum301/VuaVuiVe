@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sản phẩm theo mùa — Vựa Vui Vẻ</title>
+    <meta
+      name="description"
+      content="Khám phá gợi ý mua sắm theo bốn mùa: xuân, hạ, thu, đông."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../assets/css/reviews.css" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <style>
+      :root {
+        --bg: #fff9f2;
+      }
+    </style>
+  </head>
+  <body
+    class="has-fixed-header"
+    style="min-height: 100vh; display: flex; flex-direction: column"
+  >
+    <header id="siteHeader" class="header"></header>
+
+    <main class="section" aria-label="Gợi ý theo mùa" style="flex: 1 0 auto">
+      <div class="container" style="max-width: 1160px">
+        <div class="page-hero">
+          <div>
+            <p class="eyebrow">Theo mùa vụ</p>
+            <h1 class="page-title">Ăn đúng mùa, sống khỏe</h1>
+            <p class="muted">
+              Chọn sản phẩm hợp thời tiết: thanh mát mùa hè, ấm bụng mùa đông,
+              và đầy năng lượng cho mỗi mùa.
+            </p>
+            <div class="chip-row" id="seasonTabs" role="tablist">
+              <button
+                class="chip chip--pill"
+                data-season="spring"
+                role="tab"
+                aria-selected="true"
+              >
+                Mùa xuân
+              </button>
+              <button class="chip chip--pill" data-season="summer" role="tab">
+                Mùa hè
+              </button>
+              <button class="chip chip--pill" data-season="autumn" role="tab">
+                Mùa thu
+              </button>
+              <button class="chip chip--pill" data-season="winter" role="tab">
+                Mùa đông
+              </button>
+            </div>
+          </div>
+          <div class="page-hero__ill">
+            <div class="illus"><div class="illus__emoji">🌱</div></div>
+          </div>
+        </div>
+
+        <section class="section-card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow" id="seasonEyebrow">Xuân</p>
+              <h2 id="seasonTitle">Tươi mới, thanh nhẹ</h2>
+              <p class="muted" id="seasonDesc">
+                Trái cây mọng nước, rau xanh và đồ uống nhẹ giúp thanh lọc cơ
+                thể.
+              </p>
+            </div>
+          </div>
+          <div id="seasonGrid" class="grid" aria-live="polite"></div>
+        </section>
+
+        <section class="section-card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Combo theo mùa</p>
+              <h2>Phổ biến cùng mùa hiện tại</h2>
+              <p class="muted" id="comboStatus">
+                Đang khai phá luật kết hợp S-Apriori...
+              </p>
+            </div>
+          </div>
+          <div
+            id="seasonCombos"
+            class="grid grid--narrow"
+            aria-live="polite"
+          ></div>
+        </section>
+      </div>
+    </main>
+
+    <footer
+      class="site-footer"
+      style="
+        margin-top: auto;
+        background: url('../images/brand/footer.png') center/cover no-repeat;
+        color: #fff7e4;
+      "
+    >
+      <div class="container">
+        <div class="sf-grid">
+          <div class="sf-cols">
+            <div class="sf-col">
+              <h4>Trang chủ</h4>
+              <ul>
+                <li><a href="/html/index.html#catalog">Sản phẩm</a></li>
+                <li><a href="/html/index.html#flashsale">Flash Sale</a></li>
+                <li><a href="/html/cart.html">Giỏ hàng</a></li>
+              </ul>
+            </div>
+            <div class="sf-col">
+              <h4>Khám phá</h4>
+              <ul>
+                <li><a href="/html/recommended.html">Gợi ý cá nhân</a></li>
+                <li><a href="/html/season.html">Gợi ý theo mùa</a></li>
+                <li><a href="/html/recipes.html">Trợ lý công thức</a></li>
+              </ul>
+            </div>
+            <div class="sf-col">
+              <h4>Tài khoản</h4>
+              <ul>
+                <li><a href="/client/register.html">Đăng ký</a></li>
+                <li><a href="/client/login.html">Đăng nhập</a></li>
+              </ul>
+            </div>
+            <div class="sf-col">
+              <h4>Liên hệ</h4>
+              <ul>
+                <li>Hotline: 012345678</li>
+                <li>Địa chỉ liên hệ: Vựa Vui Vẻ</li>
+              </ul>
+            </div>
+            <div class="sf-legal">
+              Điều khoản dịch vụ | Chính sách giao hàng | Chính sách đổi trả
+            </div>
+          </div>
+          <div class="sf-brand">
+            <div class="sf-contact">
+              <div>© <span id="year"></span> vựa vui vẻ</div>
+            </div>
+            <div class="sf-social">
+              <div class="sf-social__label">Theo dõi chúng tôi</div>
+              <a href="#" aria-label="Facebook" class="sf-social__btn">f</a>
+              <a href="#" aria-label="Instagram" class="sf-social__btn">IG</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/reviews.js"></script>
+    <script type="module" src="../js/header.js"></script>
+    <script type="module" src="../js/season.js"></script>
+  </body>
+</html>

@@ -91,18 +91,18 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 0;
-  gap: 12px;
+  padding: 10px 0;
+  gap: 10px;
 }
 .logo {
   font-weight: 800;
   font-size: 22px;
   color: var(--green);
   letter-spacing: 0.4px;
-  margin-right: 12px;
+  margin-right: 8px;
 }
 .logo__img {
-  height: 72px;
+  height: 64px;
   width: auto;
   display: block;
 }
@@ -114,9 +114,9 @@ img {
   min-width: 0;
 }
 .nav a {
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 15px;
   white-space: nowrap;
 }
 .nav a:hover,
@@ -126,15 +126,17 @@ img {
 }
 .actions {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
-  font-size: 16px;
+  font-size: 15px;
   flex: 0 0 auto;
   min-width: auto;
 }
 .actions .btn {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 8px 12px;
+  min-height: 36px;
 }
 /* Account avatar & dropdown */
 .account {
@@ -192,13 +194,13 @@ img {
   gap: 8px;
   border: 0;
   border-radius: 12px;
-  padding: 10px 14px;
+  padding: 9px 12px;
   cursor: pointer;
   transition: var(--trans);
   font-weight: 600;
   white-space: nowrap;
   line-height: 1;
-  min-height: 42px;
+  min-height: 38px;
   font-family: "Merriweather", serif; /* 👈 Đảm bảo button dùng Merriweather */
 }
 .btn--pri {
@@ -320,6 +322,75 @@ img {
 /* Sections */
 .section {
   padding: 36px 0;
+}
+.section-card {
+  margin: 32px 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.section-head h2 {
+  margin: 4px 0 0;
+}
+.page-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 0 8px;
+}
+.page-hero__ill {
+  justify-self: end;
+}
+.page-title {
+  margin: 8px 0 6px;
+  font-size: 36px;
+  line-height: 1.2;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--green-2);
+  margin: 0;
+}
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-weight: 600;
+}
+.chip--soft {
+  background: #f2f5f1;
+}
+.chip--pill {
+  cursor: pointer;
+  transition: var(--trans);
+}
+.chip--pill:hover,
+.chip--active {
+  border-color: var(--green);
+  background: #e8f7ec;
 }
 .title {
   display: flex;
@@ -959,6 +1030,11 @@ input[type="range"] {
 .nav-item {
   position: relative;
 }
+.nav-item--dropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
 
 .nav-link {
   display: inline-flex;
@@ -974,6 +1050,9 @@ input[type="range"] {
   text-decoration: none;
   transition: var(--trans);
   white-space: nowrap; /* giữ văn bản 1 dòng, tránh xuống dòng */
+}
+.nav-item--dropdown > .nav-link--dropdown {
+  padding: 6px 8px;
 }
 
 .nav-link:hover,
@@ -1880,10 +1959,10 @@ input[type="range"] {
   border-radius: 999px;
   background: #fff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
-  width: 280px;
-  max-width: 280px;
-  flex: 0 0 280px;
-  margin-left: 18px;
+  width: 100px;
+  max-width: 100px;
+  flex: 0 0 100px;
+  margin-left: 10px;
 }
 .searchbox:focus-within {
   border-color: var(--green);
@@ -2964,4 +3043,158 @@ input[type="range"] {
 /* Ensure modal header title uses the custom font as well */
 #productModal .modal__head h3#pmTitle {
   font-size: 1.25rem;
+}
+/* === Combo Cards Styling for Season Page === */
+.card--combo {
+  padding: 16px;
+}
+
+.combo-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.combo-thumb__item {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--border);
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.combo-thumb__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.combo-plus {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.card--combo .card__foot {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.card--combo .btn {
+  flex: 1;
+  min-width: 120px;
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+.grid--narrow {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* ============================================
+   RECOMMENDATION PAGE STYLES
+   ============================================ */
+
+/* Recommendation Page - Chip row */
+.chip-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.chip {
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.chip--muted {
+  background: #e0e0e0;
+  color: #666;
+}
+
+.chip--soft {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Status Messages */
+.status-loading {
+  color: #3498db;
+}
+
+.status-success {
+  color: #27ae60;
+}
+
+.status-error {
+  color: #e74c3c;
+}
+
+/* Product Card Enhancement for Recommendations */
+.product-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  z-index: 1;
+}
+
+/* Empty State */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.empty-state p {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Add to Cart Button Animation */
+.add-to-cart-btn {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.add-to-cart-btn:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 159, 63, 0.3);
+}
+
+/* Responsive for recommendations */
+@media (max-width: 768px) {
+  .chip {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .product-card__badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
 }

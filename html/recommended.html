@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Gợi ý cho bạn — Vựa Vui Vẻ</title>
+    <meta
+      name="description"
+      content="Trang đề xuất sản phẩm cá nhân hóa theo lịch sử mua hàng của bạn."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../assets/css/reviews.css" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <style>
+      :root {
+        --bg: #f7fff5;
+      }
+    </style>
+  </head>
+  <body
+    class="has-fixed-header"
+    style="min-height: 100vh; display: flex; flex-direction: column"
+  >
+    <header id="siteHeader" class="header"></header>
+
+    <main class="section" aria-label="Gợi ý cá nhân" style="flex: 1 0 auto">
+      <div class="container" style="max-width: 1160px">
+        <div class="page-hero">
+          <div>
+            <p class="eyebrow">Cá nhân hóa</p>
+            <h1 class="page-title">Gợi ý dành riêng cho bạn</h1>
+            <div class="chip-row" id="recSignal"></div>
+          </div>
+        </div>
+
+        <section class="section-card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Cho riêng bạn</p>
+              <h2>Tiếp nối những gì bạn thích</h2>
+              <p class="muted" id="recStatus" aria-live="polite">
+                Đang phân tích đơn hàng...
+              </p>
+            </div>
+            <button class="btn btn--outline" id="recRefreshBtn">Làm mới</button>
+          </div>
+          <div id="recPersonalGrid" class="grid" aria-live="polite"></div>
+        </section>
+
+        <section class="section-card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Gần giống khẩu vị</p>
+              <h2>Sản phẩm tương tự</h2>
+              <p class="muted">
+                Ưu tiên cùng danh mục hoặc tiểu mục bạn mua nhiều nhất.
+              </p>
+            </div>
+          </div>
+          <div id="recSimilarGrid" class="grid" aria-live="polite"></div>
+        </section>
+
+        <section class="section-card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Xu hướng</p>
+              <h2>Mua nhiều tại Vựa Vui Vẻ</h2>
+              <p class="muted">
+                Top sản phẩm được thêm giỏ nhiều nhất, dùng khi chưa có lịch sử
+                mua.
+              </p>
+            </div>
+          </div>
+          <div id="recTrendingGrid" class="grid" aria-live="polite"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer
+      class="site-footer"
+      style="
+        margin-top: auto;
+        background: url('../images/brand/footer.png') center/cover no-repeat;
+        color: #fff7e4;
+      "
+    >
+      <div class="container">
+        <div class="sf-grid">
+          <div class="sf-cols">
+            <div class="sf-col">
+              <h4>Trang chủ</h4>
+              <ul>
+                <li><a href="/html/index.html#catalog">Sản phẩm</a></li>
+                <li><a href="/html/index.html#flashsale">Flash Sale</a></li>
+                <li><a href="/html/cart.html">Giỏ hàng</a></li>
+              </ul>
+            </div>
+            <div class="sf-col">
+              <h4>Khám phá</h4>
+              <ul>
+                <li><a href="/html/recommended.html">Gợi ý cá nhân</a></li>
+                <li><a href="/html/season.html">Gợi ý theo mùa</a></li>
+                <li><a href="/html/recipes.html">Trợ lý công thức</a></li>
+              </ul>
+            </div>
+            <div class="sf-col">
+              <h4>Tài khoản</h4>
+              <ul>
+                <li><a href="/client/register.html">Đăng ký</a></li>
+                <li><a href="/client/login.html">Đăng nhập</a></li>
+              </ul>
+            </div>
+            <div class="sf-col">
+              <h4>Liên hệ</h4>
+              <ul>
+                <li>Hotline: 012345678</li>
+                <li>Địa chỉ liên hệ: Vựa Vui Vẻ</li>
+              </ul>
+            </div>
+            <div class="sf-legal">
+              Điều khoản dịch vụ | Chính sách giao hàng | Chính sách đổi trả
+            </div>
+          </div>
+          <div class="sf-brand">
+            <div class="sf-contact">
+              <div>© <span id="year"></span> vựa vui vẻ</div>
+            </div>
+            <div class="sf-social">
+              <div class="sf-social__label">Theo dõi chúng tôi</div>
+              <a href="#" aria-label="Facebook" class="sf-social__btn">f</a>
+              <a href="#" aria-label="Instagram" class="sf-social__btn">IG</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/reviews.js"></script>
+    <script type="module" src="../js/header.js"></script>
+    <script type="module" src="../js/recommended.js"></script>
+  </body>
+</html>

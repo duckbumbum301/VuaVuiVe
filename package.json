@@ -23,8 +23,14 @@
   "author": "Group 5",
   "license": "MIT",
   "devDependencies": {
-    "json-server": "^0.17.4",
     "concurrently": "^8.2.2",
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "json-server": "^0.17.4"
+  },
+  "dependencies": {
+    "apriori": "^1.0.7",
+    "mathjs": "^15.1.0",
+    "ml-matrix": "^6.12.1",
+    "ml-pca": "^4.1.1"
   }
 }

@@ -397,5 +397,1119 @@
     ],
     "payment_status": "pending",
     "delivery_status": "placed"
+  },
+  {
+    "id": "ORD-SPRING-001",
+    "customerName": "Nguyễn Thị Xuân",
+    "email": "xuannguyen@gmail.com",
+    "phone": "0912345001",
+    "address": "45 Lê Văn Việt, Quận 9, TP.HCM",
+    "items": [
+      {
+        "productId": "100",
+        "productName": "Rau muống (500g)",
+        "quantity": 2,
+        "price": 15000,
+        "subtotal": 30000
+      },
+      {
+        "productId": "140",
+        "productName": "Hành Lá (100g)",
+        "quantity": 1,
+        "price": 8000,
+        "subtotal": 8000
+      },
+      {
+        "productId": "420",
+        "productName": "Trà ô long Tea Plus (500ml)",
+        "quantity": 2,
+        "price": 10000,
+        "subtotal": 20000
+      }
+    ],
+    "totalAmount": 58000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-02-15T09:00:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-SPRING-002",
+    "customerName": "Lê Văn Nam",
+    "email": "namle@gmail.com",
+    "phone": "0912345002",
+    "address": "89 Hoàng Diệu, Quận 4, TP.HCM",
+    "items": [
+      {
+        "productId": "100",
+        "productName": "Rau muống (500g)",
+        "quantity": 1,
+        "price": 15000,
+        "subtotal": 15000
+      },
+      {
+        "productId": "140",
+        "productName": "Hành Lá (100g)",
+        "quantity": 2,
+        "price": 8000,
+        "subtotal": 16000
+      },
+      {
+        "productId": "130",
+        "productName": "Nấm rơm (200g)",
+        "quantity": 1,
+        "price": 20000,
+        "subtotal": 20000
+      }
+    ],
+    "totalAmount": 51000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-03-10T14:30:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-SPRING-003",
+    "customerName": "Phạm Mai Lan",
+    "email": "lanpham@gmail.com",
+    "phone": "0912345003",
+    "address": "12 Nguyễn Thị Minh Khai, Quận 3, TP.HCM",
+    "items": [
+      {
+        "productId": "420",
+        "productName": "Trà ô long Tea Plus (500ml)",
+        "quantity": 3,
+        "price": 10000,
+        "subtotal": 30000
+      },
+      {
+        "productId": "131",
+        "productName": "Nấm kim châm (200g)",
+        "quantity": 1,
+        "price": 18000,
+        "subtotal": 18000
+      },
+      {
+        "productId": "100",
+        "productName": "Rau muống (500g)",
+        "quantity": 1,
+        "price": 15000,
+        "subtotal": 15000
+      }
+    ],
+    "totalAmount": 63000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-02-28T11:15:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-SUMMER-001",
+    "customerName": "Trần Hạ Vy",
+    "email": "vyha@gmail.com",
+    "phone": "0912345011",
+    "address": "78 Võ Văn Tần, Quận 3, TP.HCM",
+    "items": [
+      {
+        "productId": "400",
+        "productName": "Nước cam ép Twister (330ml)",
+        "quantity": 3,
+        "price": 12000,
+        "subtotal": 36000
+      },
+      {
+        "productId": "200",
+        "productName": "Táo Mỹ (1kg)",
+        "quantity": 1,
+        "price": 85000,
+        "subtotal": 85000
+      },
+      {
+        "productId": "430",
+        "productName": "Soda chanh 7 Up (320ml)",
+        "quantity": 2,
+        "price": 10000,
+        "subtotal": 20000
+      }
+    ],
+    "totalAmount": 141000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-05-20T10:00:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-SUMMER-002",
+    "customerName": "Hoàng Minh Hè",
+    "email": "hehoang@gmail.com",
+    "phone": "0912345012",
+    "address": "156 Lý Thường Kiệt, Quận 10, TP.HCM",
+    "items": [
+      {
+        "productId": "400",
+        "productName": "Nước cam ép Twister (330ml)",
+        "quantity": 2,
+        "price": 12000,
+        "subtotal": 24000
+      },
+      {
+        "productId": "430",
+        "productName": "Soda chanh 7 Up (320ml)",
+        "quantity": 3,
+        "price": 10000,
+        "subtotal": 30000
+      },
+      {
+        "productId": "201",
+        "productName": "Chuối Laba (1kg)",
+        "quantity": 1,
+        "price": 28000,
+        "subtotal": 28000
+      }
+    ],
+    "totalAmount": 82000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-06-05T15:45:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-SUMMER-003",
+    "customerName": "Đặng Thị Thu",
+    "email": "thudang@gmail.com",
+    "phone": "0912345013",
+    "address": "234 Điện Biên Phủ, Quận Bình Thạnh, TP.HCM",
+    "items": [
+      {
+        "productId": "430",
+        "productName": "Soda chanh 7 Up (320ml)",
+        "quantity": 2,
+        "price": 10000,
+        "subtotal": 20000
+      },
+      {
+        "productId": "200",
+        "productName": "Táo Mỹ (1kg)",
+        "quantity": 2,
+        "price": 85000,
+        "subtotal": 170000
+      },
+      {
+        "productId": "401",
+        "productName": "Nước ép táo (350ml)",
+        "quantity": 1,
+        "price": 15000,
+        "subtotal": 15000
+      }
+    ],
+    "totalAmount": 205000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-04-18T09:30:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-AUTUMN-001",
+    "customerName": "Vũ Thu Hà",
+    "email": "havuthu@gmail.com",
+    "phone": "0912345021",
+    "address": "67 Trần Hưng Đạo, Quận 1, TP.HCM",
+    "items": [
+      {
+        "productId": "500",
+        "productName": "Gạo ST25 (1kg)",
+        "quantity": 2,
+        "price": 38000,
+        "subtotal": 76000
+      },
+      {
+        "productId": "510",
+        "productName": "Mì Hảo Hảo (5 gói)",
+        "quantity": 3,
+        "price": 25000,
+        "subtotal": 75000
+      },
+      {
+        "productId": "211",
+        "productName": "Giỏ quà cao cấp",
+        "quantity": 1,
+        "price": 480000,
+        "subtotal": 480000
+      }
+    ],
+    "totalAmount": 631000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-08-12T13:20:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-AUTUMN-002",
+    "customerName": "Bùi Văn Thu",
+    "email": "thubui@gmail.com",
+    "phone": "0912345022",
+    "address": "345 Cách Mạng Tháng 8, Quận 10, TP.HCM",
+    "items": [
+      {
+        "productId": "500",
+        "productName": "Gạo ST25 (1kg)",
+        "quantity": 1,
+        "price": 38000,
+        "subtotal": 38000
+      },
+      {
+        "productId": "510",
+        "productName": "Mì Hảo Hảo (5 gói)",
+        "quantity": 2,
+        "price": 25000,
+        "subtotal": 50000
+      },
+      {
+        "productId": "550",
+        "productName": "Pate thịt bò Vissan",
+        "quantity": 2,
+        "price": 32000,
+        "subtotal": 64000
+      }
+    ],
+    "totalAmount": 152000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-09-25T16:00:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-AUTUMN-003",
+    "customerName": "Lý Minh Thu",
+    "email": "thulyminh@gmail.com",
+    "phone": "0912345023",
+    "address": "89 Lê Lợi, Quận 1, TP.HCM",
+    "items": [
+      {
+        "productId": "510",
+        "productName": "Mì Hảo Hảo (5 gói)",
+        "quantity": 4,
+        "price": 25000,
+        "subtotal": 100000
+      },
+      {
+        "productId": "500",
+        "productName": "Gạo ST25 (1kg)",
+        "quantity": 1,
+        "price": 38000,
+        "subtotal": 38000
+      },
+      {
+        "productId": "210",
+        "productName": "Giỏ trái cây Mix",
+        "quantity": 1,
+        "price": 250000,
+        "subtotal": 250000
+      }
+    ],
+    "totalAmount": 388000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-07-30T10:30:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-WINTER-001",
+    "customerName": "Ngô Đông Phương",
+    "email": "phuongngo@gmail.com",
+    "phone": "0912345031",
+    "address": "23 Pasteur, Quận 1, TP.HCM",
+    "items": [
+      {
+        "productId": "300",
+        "productName": "Thịt heo ba rọi (500g)",
+        "quantity": 2,
+        "price": 70000,
+        "subtotal": 140000
+      },
+      {
+        "productId": "600",
+        "productName": "Nước mắm Nam Ngư (500ml)",
+        "quantity": 1,
+        "price": 25000,
+        "subtotal": 25000
+      },
+      {
+        "productId": "621",
+        "productName": "Bột ngọt Ajinomoto (200g)",
+        "quantity": 1,
+        "price": 12000,
+        "subtotal": 12000
+      }
+    ],
+    "totalAmount": 177000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-11-15T08:45:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-WINTER-002",
+    "customerName": "Trương Đông Hải",
+    "email": "haitruong@gmail.com",
+    "phone": "0912345032",
+    "address": "456 Nguyễn Trãi, Quận 5, TP.HCM",
+    "items": [
+      {
+        "productId": "300",
+        "productName": "Thịt heo ba rọi (500g)",
+        "quantity": 1,
+        "price": 70000,
+        "subtotal": 70000
+      },
+      {
+        "productId": "621",
+        "productName": "Bột ngọt Ajinomoto (200g)",
+        "quantity": 2,
+        "price": 12000,
+        "subtotal": 24000
+      },
+      {
+        "productId": "510",
+        "productName": "Mì Hảo Hảo (5 gói)",
+        "quantity": 2,
+        "price": 25000,
+        "subtotal": 50000
+      },
+      {
+        "productId": "440",
+        "productName": "Cà phê phin đậm truyền thống Phương Vy 500g",
+        "quantity": 1,
+        "price": 10000,
+        "subtotal": 10000
+      }
+    ],
+    "totalAmount": 154000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-12-01T12:00:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-WINTER-003",
+    "customerName": "Võ Minh Đông",
+    "email": "dongvo@gmail.com",
+    "phone": "0912345033",
+    "address": "789 Lý Thái Tổ, Quận 10, TP.HCM",
+    "items": [
+      {
+        "productId": "600",
+        "productName": "Nước mắm Nam Ngư (500ml)",
+        "quantity": 2,
+        "price": 25000,
+        "subtotal": 50000
+      },
+      {
+        "productId": "300",
+        "productName": "Thịt heo ba rọi (500g)",
+        "quantity": 2,
+        "price": 70000,
+        "subtotal": 140000
+      },
+      {
+        "productId": "301",
+        "productName": "Sườn non (500g)",
+        "quantity": 1,
+        "price": 85000,
+        "subtotal": 85000
+      }
+    ],
+    "totalAmount": 275000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-10-20T14:30:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-WINTER-004",
+    "customerName": "Phan Thị Đông",
+    "email": "dongphan@gmail.com",
+    "phone": "0912345034",
+    "address": "12 Hai Bà Trưng, Quận 1, TP.HCM",
+    "items": [
+      {
+        "productId": "621",
+        "productName": "Bột ngọt Ajinomoto (200g)",
+        "quantity": 1,
+        "price": 12000,
+        "subtotal": 12000
+      },
+      {
+        "productId": "300",
+        "productName": "Thịt heo ba rọi (500g)",
+        "quantity": 1,
+        "price": 70000,
+        "subtotal": 70000
+      },
+      {
+        "productId": "600",
+        "productName": "Nước mắm Nam Ngư (500ml)",
+        "quantity": 1,
+        "price": 25000,
+        "subtotal": 25000
+      },
+      {
+        "productId": "440",
+        "productName": "Cà phê phin đậm truyền thống Phương Vy 500g",
+        "quantity": 2,
+        "price": 10000,
+        "subtotal": 20000
+      }
+    ],
+    "totalAmount": 127000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-11-28T09:15:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-SPRING-TET-001",
+    "customerName": "Nguyễn Thị Mai",
+    "email": "maingt@gmail.com",
+    "phone": "0913456001",
+    "address": "45 Lê Văn Việt, Quận 9, TP.HCM",
+    "items": [
+      {
+        "productId": "800",
+        "productName": "Bánh Oreo (133g)",
+        "quantity": 3,
+        "price": 15000,
+        "subtotal": 45000
+      },
+      {
+        "productId": "820",
+        "productName": "Kẹo Alpenliebe (120g)",
+        "quantity": 2,
+        "price": 18000,
+        "subtotal": 36000
+      },
+      {
+        "productId": "420",
+        "productName": "Trà ô long Tea Plus (500ml)",
+        "quantity": 4,
+        "price": 10000,
+        "subtotal": 40000
+      }
+    ],
+    "totalAmount": 121000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-01-20T10:00:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-SPRING-TET-002",
+    "customerName": "Trần Văn Tết",
+    "email": "tetvan@gmail.com",
+    "phone": "0913456002",
+    "address": "123 Nguyễn Huệ, Quận 1, TP.HCM",
+    "items": [
+      {
+        "productId": "821",
+        "productName": "Kẹo bạc hà Mentos (38g)",
+        "quantity": 4,
+        "price": 15000,
+        "subtotal": 60000
+      },
+      {
+        "productId": "800",
+        "productName": "Bánh Oreo (133g)",
+        "quantity": 2,
+        "price": 15000,
+        "subtotal": 30000
+      },
+      {
+        "productId": "431",
+        "productName": "Nước ngọt Fanta hương dâu lon (320ml)",
+        "quantity": 6,
+        "price": 9000,
+        "subtotal": 54000
+      }
+    ],
+    "totalAmount": 144000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-02-05T14:30:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-SPRING-TET-003",
+    "customerName": "Lê Thị Xuân",
+    "email": "xuanle@gmail.com",
+    "phone": "0913456003",
+    "address": "67 Trần Hưng Đạo, Quận 5, TP.HCM",
+    "items": [
+      {
+        "productId": "300",
+        "productName": "Thịt heo ba rọi (500g)",
+        "quantity": 2,
+        "price": 70000,
+        "subtotal": 140000
+      },
+      {
+        "productId": "600",
+        "productName": "Nước mắm Nam Ngư (500ml)",
+        "quantity": 1,
+        "price": 25000,
+        "subtotal": 25000
+      },
+      {
+        "productId": "621",
+        "productName": "Bột ngọt Ajinomoto (200g)",
+        "quantity": 1,
+        "price": 12000,
+        "subtotal": 12000
+      }
+    ],
+    "totalAmount": 177000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-03-02T11:00:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-SPRING-TET-004",
+    "customerName": "Phạm Minh Xuân",
+    "email": "xuanpham@gmail.com",
+    "phone": "0913456004",
+    "address": "234 Lý Thường Kiệt, Quận 10, TP.HCM",
+    "items": [
+      {
+        "productId": "300",
+        "productName": "Thịt heo ba rọi (500g)",
+        "quantity": 1,
+        "price": 70000,
+        "subtotal": 70000
+      },
+      {
+        "productId": "600",
+        "productName": "Nước mắm Nam Ngư (500ml)",
+        "quantity": 2,
+        "price": 25000,
+        "subtotal": 50000
+      },
+      {
+        "productId": "621",
+        "productName": "Bột ngọt Ajinomoto (200g)",
+        "quantity": 2,
+        "price": 12000,
+        "subtotal": 24000
+      }
+    ],
+    "totalAmount": 144000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-01-15T16:20:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-SUMMER-GIAINHIET-001",
+    "customerName": "Võ Hạ Vy",
+    "email": "vyhavo@gmail.com",
+    "phone": "0913456011",
+    "address": "45 Pasteur, Quận 1, TP.HCM",
+    "items": [
+      {
+        "productId": "431",
+        "productName": "Nước ngọt Fanta hương dâu lon (320ml)",
+        "quantity": 6,
+        "price": 9000,
+        "subtotal": 54000
+      },
+      {
+        "productId": "430",
+        "productName": "Soda chanh 7 Up (320ml)",
+        "quantity": 4,
+        "price": 10000,
+        "subtotal": 40000
+      },
+      {
+        "productId": "200",
+        "productName": "Táo Mỹ (1kg)",
+        "quantity": 2,
+        "price": 85000,
+        "subtotal": 170000
+      }
+    ],
+    "totalAmount": 264000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-05-15T09:30:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-SUMMER-GIAINHIET-002",
+    "customerName": "Đặng Minh Hè",
+    "email": "hedang@gmail.com",
+    "phone": "0913456012",
+    "address": "89 Nguyễn Đình Chiểu, Quận 3, TP.HCM",
+    "items": [
+      {
+        "productId": "430",
+        "productName": "Soda chanh 7 Up (320ml)",
+        "quantity": 5,
+        "price": 10000,
+        "subtotal": 50000
+      },
+      {
+        "productId": "400",
+        "productName": "Nước cam ép Twister (330ml)",
+        "quantity": 3,
+        "price": 12000,
+        "subtotal": 36000
+      },
+      {
+        "productId": "201",
+        "productName": "Chuối Laba (1kg)",
+        "quantity": 2,
+        "price": 28000,
+        "subtotal": 56000
+      }
+    ],
+    "totalAmount": 142000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-06-20T14:00:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-SUMMER-MATLÀNH-001",
+    "customerName": "Hoàng Thị Hè",
+    "email": "hehoang@gmail.com",
+    "phone": "0913456013",
+    "address": "156 Cộng Hòa, Quận Tân Bình, TP.HCM",
+    "items": [
+      {
+        "productId": "410",
+        "productName": "Sữa tươi Vinamilk (180ml)",
+        "quantity": 4,
+        "price": 9000,
+        "subtotal": 36000
+      },
+      {
+        "productId": "411",
+        "productName": "Sữa đậu nành Fami (200ml)",
+        "quantity": 3,
+        "price": 8000,
+        "subtotal": 24000
+      },
+      {
+        "productId": "200",
+        "productName": "Táo Mỹ (1kg)",
+        "quantity": 1,
+        "price": 85000,
+        "subtotal": 85000
+      },
+      {
+        "productId": "842",
+        "productName": "Xoài sấy",
+        "quantity": 2,
+        "price": 60000,
+        "subtotal": 120000
+      }
+    ],
+    "totalAmount": 265000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-04-25T11:45:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-SUMMER-MATLÀNH-002",
+    "customerName": "Bùi Văn Hè",
+    "email": "hebui@gmail.com",
+    "phone": "0913456014",
+    "address": "234 Võ Văn Tần, Quận 3, TP.HCM",
+    "items": [
+      {
+        "productId": "410",
+        "productName": "Sữa tươi Vinamilk (180ml)",
+        "quantity": 6,
+        "price": 9000,
+        "subtotal": 54000
+      },
+      {
+        "productId": "200",
+        "productName": "Táo Mỹ (1kg)",
+        "quantity": 2,
+        "price": 85000,
+        "subtotal": 170000
+      },
+      {
+        "productId": "201",
+        "productName": "Chuối Laba (1kg)",
+        "quantity": 1,
+        "price": 28000,
+        "subtotal": 28000
+      }
+    ],
+    "totalAmount": 252000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-05-30T15:20:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-AUTUMN-TUUTRUONG-001",
+    "customerName": "Nguyễn Thu Hà",
+    "email": "hanguyenthu@gmail.com",
+    "phone": "0913456021",
+    "address": "67 Lý Thái Tổ, Quận 10, TP.HCM",
+    "items": [
+      {
+        "productId": "410",
+        "productName": "Sữa tươi Vinamilk (180ml)",
+        "quantity": 10,
+        "price": 9000,
+        "subtotal": 90000
+      },
+      {
+        "productId": "411",
+        "productName": "Sữa đậu nành Fami (200ml)",
+        "quantity": 8,
+        "price": 8000,
+        "subtotal": 64000
+      },
+      {
+        "productId": "830",
+        "productName": "Ngũ cốc Granola",
+        "quantity": 2,
+        "price": 95000,
+        "subtotal": 190000
+      }
+    ],
+    "totalAmount": 344000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-08-20T08:00:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-AUTUMN-TUUTRUONG-002",
+    "customerName": "Trần Minh Thu",
+    "email": "thutran@gmail.com",
+    "phone": "0913456022",
+    "address": "123 Hai Bà Trưng, Quận 1, TP.HCM",
+    "items": [
+      {
+        "productId": "410",
+        "productName": "Sữa tươi Vinamilk (180ml)",
+        "quantity": 12,
+        "price": 9000,
+        "subtotal": 108000
+      },
+      {
+        "productId": "830",
+        "productName": "Ngũ cốc Granola",
+        "quantity": 3,
+        "price": 95000,
+        "subtotal": 285000
+      },
+      {
+        "productId": "801",
+        "productName": "Bánh gạo One One (100g)",
+        "quantity": 4,
+        "price": 18000,
+        "subtotal": 72000
+      }
+    ],
+    "totalAmount": 465000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-07-10T09:30:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-AUTUMN-TRUNGTHU-001",
+    "customerName": "Lê Thu Phương",
+    "email": "phuongle@gmail.com",
+    "phone": "0913456023",
+    "address": "45 Điện Biên Phủ, Quận Bình Thạnh, TP.HCM",
+    "items": [
+      {
+        "productId": "800",
+        "productName": "Bánh Oreo (133g)",
+        "quantity": 5,
+        "price": 15000,
+        "subtotal": 75000
+      },
+      {
+        "productId": "810",
+        "productName": "Socola Snickers (40g)",
+        "quantity": 4,
+        "price": 25000,
+        "subtotal": 100000
+      },
+      {
+        "productId": "420",
+        "productName": "Trà ô long Tea Plus (500ml)",
+        "quantity": 6,
+        "price": 10000,
+        "subtotal": 60000
+      },
+      {
+        "productId": "421",
+        "productName": "Trà chanh C2 (500ml)",
+        "quantity": 4,
+        "price": 9000,
+        "subtotal": 36000
+      }
+    ],
+    "totalAmount": 271000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-09-10T13:45:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-AUTUMN-TRUNGTHU-002",
+    "customerName": "Võ Thu Lan",
+    "email": "lanvo@gmail.com",
+    "phone": "0913456024",
+    "address": "89 Trần Hưng Đạo, Quận 1, TP.HCM",
+    "items": [
+      {
+        "productId": "820",
+        "productName": "Kẹo Alpenliebe (120g)",
+        "quantity": 5,
+        "price": 18000,
+        "subtotal": 90000
+      },
+      {
+        "productId": "800",
+        "productName": "Bánh Oreo (133g)",
+        "quantity": 3,
+        "price": 15000,
+        "subtotal": 45000
+      },
+      {
+        "productId": "420",
+        "productName": "Trà ô long Tea Plus (500ml)",
+        "quantity": 8,
+        "price": 10000,
+        "subtotal": 80000
+      }
+    ],
+    "totalAmount": 215000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-08-28T16:00:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-WINTER-LAU-001",
+    "customerName": "Nguyễn Đông Anh",
+    "email": "anhnguyen@gmail.com",
+    "phone": "0913456031",
+    "address": "23 Lê Lợi, Quận 1, TP.HCM",
+    "items": [
+      {
+        "productId": "300",
+        "productName": "Thịt heo ba rọi (500g)",
+        "quantity": 3,
+        "price": 70000,
+        "subtotal": 210000
+      },
+      {
+        "productId": "301",
+        "productName": "Sườn non (500g)",
+        "quantity": 2,
+        "price": 85000,
+        "subtotal": 170000
+      },
+      {
+        "productId": "310",
+        "productName": "Cá basa phi lê (500g)",
+        "quantity": 2,
+        "price": 55000,
+        "subtotal": 110000
+      },
+      {
+        "productId": "130",
+        "productName": "Nấm rơm (200g)",
+        "quantity": 4,
+        "price": 20000,
+        "subtotal": 80000
+      },
+      {
+        "productId": "100",
+        "productName": "Rau muống (500g)",
+        "quantity": 3,
+        "price": 15000,
+        "subtotal": 45000
+      },
+      {
+        "productId": "103",
+        "productName": "Cải Thia (500g)",
+        "quantity": 2,
+        "price": 18000,
+        "subtotal": 36000
+      }
+    ],
+    "totalAmount": 651000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-11-20T18:30:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-WINTER-LAU-002",
+    "customerName": "Trần Đông Phương",
+    "email": "phuongtran@gmail.com",
+    "phone": "0913456032",
+    "address": "456 Cách Mạng Tháng 8, Quận 10, TP.HCM",
+    "items": [
+      {
+        "productId": "310",
+        "productName": "Cá basa phi lê (500g)",
+        "quantity": 3,
+        "price": 55000,
+        "subtotal": 165000
+      },
+      {
+        "productId": "300",
+        "productName": "Thịt heo ba rọi (500g)",
+        "quantity": 2,
+        "price": 70000,
+        "subtotal": 140000
+      },
+      {
+        "productId": "131",
+        "productName": "Nấm kim châm (200g)",
+        "quantity": 3,
+        "price": 18000,
+        "subtotal": 54000
+      },
+      {
+        "productId": "100",
+        "productName": "Rau muống (500g)",
+        "quantity": 4,
+        "price": 15000,
+        "subtotal": 60000
+      },
+      {
+        "productId": "101",
+        "productName": "Cải bẹ xanh (500g)",
+        "quantity": 2,
+        "price": 18000,
+        "subtotal": 36000
+      }
+    ],
+    "totalAmount": 455000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-12-05T19:00:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-WINTER-MIGOI-001",
+    "customerName": "Lê Đông Hải",
+    "email": "haile@gmail.com",
+    "phone": "0913456033",
+    "address": "234 Nguyễn Trãi, Quận 5, TP.HCM",
+    "items": [
+      {
+        "productId": "510",
+        "productName": "Mì Hảo Hảo (5 gói)",
+        "quantity": 5,
+        "price": 25000,
+        "subtotal": 125000
+      },
+      {
+        "productId": "600",
+        "productName": "Nước mắm Nam Ngư (500ml)",
+        "quantity": 2,
+        "price": 25000,
+        "subtotal": 50000
+      },
+      {
+        "productId": "621",
+        "productName": "Bột ngọt Ajinomoto (200g)",
+        "quantity": 2,
+        "price": 12000,
+        "subtotal": 24000
+      }
+    ],
+    "totalAmount": 199000,
+    "status": "delivered",
+    "paymentMethod": "banking",
+    "createdAt": "2024-10-15T20:30:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
+  },
+  {
+    "id": "ORD-WINTER-MIGOI-002",
+    "customerName": "Phạm Minh Đông",
+    "email": "dongpham@gmail.com",
+    "phone": "0913456034",
+    "address": "78 Lý Thường Kiệt, Quận 10, TP.HCM",
+    "items": [
+      {
+        "productId": "510",
+        "productName": "Mì Hảo Hảo (5 gói)",
+        "quantity": 6,
+        "price": 25000,
+        "subtotal": 150000
+      },
+      {
+        "productId": "600",
+        "productName": "Nước mắm Nam Ngư (500ml)",
+        "quantity": 1,
+        "price": 25000,
+        "subtotal": 25000
+      },
+      {
+        "productId": "621",
+        "productName": "Bột ngọt Ajinomoto (200g)",
+        "quantity": 3,
+        "price": 12000,
+        "subtotal": 36000
+      },
+      {
+        "productId": "440",
+        "productName": "Cà phê phin đậm truyền thống Phương Vy 500g",
+        "quantity": 2,
+        "price": 10000,
+        "subtotal": 20000
+      }
+    ],
+    "totalAmount": 231000,
+    "status": "delivered",
+    "paymentMethod": "cod",
+    "createdAt": "2024-11-08T21:15:00.000Z",
+    "payment_status": "paid",
+    "delivery_status": "delivered"
   }
 ]

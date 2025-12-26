@@ -5,30 +5,30 @@ color 0C
 
 echo.
 echo ╔══════════════════════════════════════════════════════════════╗
-echo ║          🛑 DỪNG TẤT CẢ SERVICES                            ║
+echo ║              DỪNG TẤT CẢ SERVICES                            ║
 echo ╚══════════════════════════════════════════════════════════════╝
 echo.
 
-echo 🔄 Đang dừng tất cả Node.js processes...
+echo  Đang dừng tất cả Node.js processes...
 taskkill /F /IM node.exe >nul 2>nul
 
 if %errorlevel% equ 0 (
-    echo ✅ Đã dừng thành công!
+    echo  Đã dừng thành công!
 ) else (
-    echo ℹ️  Không có process nào đang chạy
+    echo ℹ  Không có process nào đang chạy
 )
 
 echo.
-echo 📊 Kiểm tra ports...
+echo  Kiểm tra ports...
 netstat -ano | findstr ":8888 :3000 :8000" | findstr "LISTENING" >nul
 if %errorlevel% equ 0 (
-    echo ⚠️  Một số services vẫn đang chạy:
+    echo   Một số services vẫn đang chạy:
     netstat -ano | findstr ":8888 :3000 :8000" | findstr "LISTENING"
 ) else (
-    echo ✅ Tất cả ports đã được giải phóng
+    echo  Tất cả ports đã được giải phóng
 )
 
 echo.
-echo ✅ Hoàn tất!
+echo  Hoàn tất!
 echo.
 pause

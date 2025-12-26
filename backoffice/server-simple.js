@@ -8,6 +8,8 @@ import {
   stockRestoreMiddleware,
   productSyncMiddleware,
 } from "./server-middleware.js";
+import TimeAwareRecommender from "./ml/models/TimeAwareRecommender.js";
+import SeasonalRecommender from "./ml/models/SeasonalRecommender.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,6 +17,16 @@ const __dirname = path.dirname(__filename);
 const server = jsonServer.create();
 const router = jsonServer.router(path.join(__dirname, "db.json"));
 const middlewares = jsonServer.defaults();
+const recommender = new TimeAwareRecommender({
+  dbPath: path.join(__dirname, "db.json"),
+  lambda: 0.05,
+  lookbackDays: 90,
+});
+const seasonalRecommender = new SeasonalRecommender({
+  dbPath: path.join(__dirname, "db.json"),
+  minSupport: 0.2,
+  minConfidence: 0.5,
+});
 
 const PORT = 3000;
 
@@ -116,6 +128,32 @@ server.patch("/api/orders/:id/payment-failed", (req, res) => {
   console.log(`❌ Order ${id} marked as PAYMENT FAILED (stock NOT deducted)`);
 
   res.json({ success: true, order });
+});
+
+// ====== RECOMMENDATION API (TIME-AWARE) ======
+server.get("/api/recommend/:userId", async (req, res) => {
+  const { userId } = req.params;
+
+  try {
+    const recommendations = await recommender.getRecommendations(userId);
+    res.json({ userId, recommendations });
+  } catch (err) {
+    console.error("Recommendation error:", err);
+    res.status(500).json({ error: "Failed to generate recommendations" });
+  }
+});
+
+// ====== SEASONAL ASSOCIATION RULES (S-APRIORI) ======
+server.get("/api/recommend/seasonal", async (_req, res) => {
+  try {
+    const result = await seasonalRecommender.getSeasonalRules();
+    res.json(result);
+  } catch (err) {
+    console.error("Seasonal recommendation error:", err);
+    res
+      .status(500)
+      .json({ error: "Failed to generate seasonal recommendations" });
+  }
 });
 
 // 🔄 API: Admin cập nhật trạng thái đơn hàng (COD)

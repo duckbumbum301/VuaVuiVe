@@ -4,9 +4,37 @@
 import express from "express";
 import cors from "cors";
 import dataManager from "./dataManager.js";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+
+// For ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Import recommendation service using dynamic import
+let getRecommendationService;
+(async () => {
+  const module = await import(
+    "./ml/services/recommendation/recommendation_service.js"
+  );
+  getRecommendationService = module.getRecommendationService;
+})();
 
 const { productsAPI, ordersAPI, usersAPI, auditLogsAPI, statsAPI } =
   dataManager;
+
+// Helper function to load ML orders
+import { promises as fs } from "fs";
+async function loadMLOrders() {
+  try {
+    const mlOrdersPath = join(__dirname, "data", "orders-ml.json");
+    const data = await fs.readFile(mlOrdersPath, "utf-8");
+    return JSON.parse(data);
+  } catch (error) {
+    console.warn("⚠️ orders-ml.json not found, using regular orders");
+    return await ordersAPI.getAll();
+  }
+}
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -408,6 +436,80 @@ app.get("/health", (req, res) => {
   });
 });
 
+// ============ RECOMMENDATION ENDPOINTS ============
+
+// GET /api/recommendations - Get recommendations for a user
+app.get("/api/recommendations", async (req, res) => {
+  try {
+    const userId = req.query.userId;
+
+    if (!userId) {
+      return res.status(400).json({
+        error: "userId is required",
+      });
+    }
+
+    // Get recommendation service
+    const recService = getRecommendationService();
+
+    // Load data - use ML orders for better recommendations
+    const orders = await loadMLOrders();
+    const products = await productsAPI.getAll();
+
+    // Get recommendations
+    const recommendations = await recService.getRecommendations(
+      userId,
+      orders,
+      products,
+      { limit: 12 }
+    );
+
+    res.json(recommendations);
+  } catch (error) {
+    console.error("Recommendation error:", error);
+    res.status(500).json({
+      error: "Failed to generate recommendations",
+      message: error.message,
+    });
+  }
+});
+
+// POST /api/recommendations/retrain - Manual retrain
+app.post("/api/recommendations/retrain", async (req, res) => {
+  try {
+    const recService = getRecommendationService();
+
+    const orders = await loadMLOrders();
+    const products = await productsAPI.getAll();
+
+    await recService.retrain(orders, products);
+
+    res.json({
+      message: "Retrain completed",
+      status: recService.getStatus(),
+    });
+  } catch (error) {
+    console.error("Retrain error:", error);
+    res.status(500).json({
+      error: "Retrain failed",
+      message: error.message,
+    });
+  }
+});
+
+// GET /api/recommendations/status - Status endpoint
+app.get("/api/recommendations/status", (req, res) => {
+  try {
+    const recService = getRecommendationService();
+    res.json(recService.getStatus());
+  } catch (error) {
+    res.status(500).json({
+      error: "Failed to get status",
+      message: error.message,
+    });
+  }
+});
+
 // Root endpoint
 app.get("/", (req, res) => {
   res.json({
@@ -436,7 +538,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`\n🚀 Vựa Vui Vẻ API Server đang chạy!`);
   console.log(`📍 URL: http://localhost:${PORT}`);
   console.log(`📊 Health check: http://localhost:${PORT}/health`);
@@ -445,7 +547,26 @@ app.listen(PORT, () => {
   console.log(`👥 Users: http://localhost:${PORT}/api/users`);
   console.log(`📝 Audit Logs: http://localhost:${PORT}/api/audit-logs`);
   console.log(`📈 Stats: http://localhost:${PORT}/api/stats/dashboard`);
+  console.log(
+    `🎯 Recommendations: http://localhost:${PORT}/api/recommendations`
+  );
   console.log(`\n✨ Server sẵn sàng nhận requests!\n`);
+
+  // Initialize recommendation service in background
+  try {
+    console.log("🚀 Initializing recommendation service...");
+    const recService = getRecommendationService();
+    const orders = await loadMLOrders();
+    const products = await productsAPI.getAll();
+
+    console.log(`📊 Loaded ${orders.length} orders for ML training`);
+
+    recService.initialize(orders, products).catch((err) => {
+      console.error("Failed to initialize recommendation service:", err);
+    });
+  } catch (error) {
+    console.error("Startup error:", error);
+  }
 });
 
 export default app;
