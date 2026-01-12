@@ -7,50 +7,93 @@
     <meta name="description" content="Trang giỏ hàng của Vựa Vui Vẻ" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../assets/css/reviews.css" />
     <!-- Cache busting + no-cache -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
   </head>
-  <body style="min-height:100vh; display:flex; flex-direction:column;">
+  <body style="min-height: 100vh; display: flex; flex-direction: column">
     <header id="siteHeader" class="header"></header>
 
-    <main class="section" aria-label="Trang Giỏ hàng" style="flex:1 0 auto;">
-      <div class="container" style="max-width: 1100px;">
-        <div class="title" style="display:flex; align-items:center; gap:12px;">
-          <h2 style="margin:0;">Giỏ hàng</h2>
-          <label style="display:flex; align-items:center; gap:8px; font-weight:600;">
+    <main class="section" aria-label="Trang Giỏ hàng" style="flex: 1 0 auto">
+      <div class="container" style="max-width: 1100px">
+        <div
+          class="title"
+          style="display: flex; align-items: center; gap: 12px"
+        >
+          <h2 style="margin: 0">Giỏ hàng</h2>
+          <label
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              font-weight: 600;
+            "
+          >
             <input type="checkbox" id="cartSelectAll" />
             <span>Chọn tất cả</span>
           </label>
         </div>
-        <div id="cartPageBody" class="drawer__body" style="padding: 8px 16px; display:flex; flex-direction:column; gap:12px"></div>
-        <div class="drawer__foot" style="margin-top: 16px; display: flex; gap: 12px; align-items: center; justify-content: space-between;">
+        <div
+          id="cartPageBody"
+          class="drawer__body"
+          style="
+            padding: 8px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+          "
+        ></div>
+        <div
+          class="drawer__foot"
+          style="
+            margin-top: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
           <div>
             <label class="muted">Tạm tính:</label>
             <strong id="cartPageSubtotal">0đ</strong>
           </div>
-          <div style="display:flex; gap:12px;">
+          <div style="display: flex; gap: 12px">
             <button class="btn btn--pri" id="btnCheckout">Thanh toán</button>
-            <button class="btn btn--outline" id="btnClearCart">Làm sạch giỏ hàng</button>
+            <button class="btn btn--outline" id="btnClearCart">
+              Làm sạch giỏ hàng
+            </button>
           </div>
         </div>
       </div>
     </main>
 
-    <footer class="site-footer" style="margin-top:auto; background:url('../images/brand/footer.png') center/cover no-repeat; color:#fff7e4;">
+    <footer
+      class="site-footer"
+      style="
+        margin-top: auto;
+        background: url('../images/brand/footer.png') center/cover no-repeat;
+        color: #fff7e4;
+      "
+    >
       <div class="container">
         <div class="sf-grid">
           <div class="sf-cols">
             <div class="sf-col">
               <h4>Trang chủ</h4>
               <ul>
-                <li><a href="#catalog">Sản phẩm</a></li>
-                <li><a href="#flashsale">Flash Sale</a></li>
-                <li><a href="#cart">Giỏ hàng</a></li>
+                <li><a href="index.html#catalog">Sản phẩm</a></li>
+                <li><a href="index.html#flashsale">Flash Sale</a></li>
+                <li><a href="cart.html">Giỏ hàng</a></li>
               </ul>
             </div>
             <div class="sf-col">
@@ -75,7 +118,9 @@
                 <li>Địa chỉ liên hệ: Vựa Vui Vẻ</li>
               </ul>
             </div>
-            <div class="sf-legal">Điều khoản dịch vụ | Chính sách giao hàng | Chính sách đổi trả</div>
+            <div class="sf-legal">
+              Điều khoản dịch vụ | Chính sách giao hàng | Chính sách đổi trả
+            </div>
           </div>
           <div class="sf-brand">
             <div class="sf-contact">

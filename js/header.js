@@ -3,6 +3,15 @@ import { bindMegaMenu } from "./menu.js";
 import { getCart, loadCart } from "./cart.js";
 import { apiListProducts, apiCurrentUser } from "./api.js";
 
+function getPathHelpers() {
+  const pathName = (location.pathname || "").toLowerCase();
+  const inHtml = pathName.includes("/html/");
+  const inClient = pathName.includes("/client/");
+  const appPage = (file) => (inHtml ? file : `../html/${file}`);
+  const clientPage = (file) => (inClient ? file : `../client/${file}`);
+  return { inHtml, inClient, appPage, clientPage };
+}
+
 function sumCartQty() {
   try {
     const entries = Object.entries(getCart()).filter(([, q]) => q > 0);
@@ -19,15 +28,15 @@ function buildHeaderHTML() {
       <line x1="16.65" y1="16.65" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
     </svg>`;
 
-  // Trang chủ mong muốn: Home/Hôm
-  const homeHref = "../Home/H%C3%B4m/index.html";
+  const { appPage } = getPathHelpers();
+  const homeHref = appPage("index.html");
   const isHome = /\/html\/index\.html$/i.test(location.pathname);
-  const catalogHref = isHome ? "#catalog" : "/html/index.html#catalog";
+  const catalogHref = isHome ? "#catalog" : `${homeHref}#catalog`;
   const makeProductHref = (id) => {
     const pid = String(id);
     return isHome
       ? `?product=${pid}#catalog`
-      : `/html/index.html?product=${pid}#catalog`;
+      : `${homeHref}?product=${pid}#catalog`;
   };
 
   return `
@@ -488,10 +497,9 @@ function buildHeaderHTML() {
             </div>
           </div>
         </div>
-        <a href="/html/recipes.html">Công thức</a>
-        <a href="/html/recommended.html">Gợi ý cá nhân</a>
-        <a href="/html/season.html">Theo mùa</a>
-        <a href="/html/aboutus.html">Giới thiệu</a>
+        <a href="${appPage("recipes.html")}">Công thức</a>
+        <a href="${appPage("recommended.html")}">Gợi ý cá nhân</a>
+        <a href="${appPage("aboutus.html")}">Giới thiệu</a>
       </nav>
       <div class="searchbox" role="search">
         <input id="searchInput" class="searchbox__input" type="search" placeholder="Search" aria-label="Tìm kiếm sản phẩm" autocomplete="on" />
@@ -511,6 +519,7 @@ function mountHeader() {
   if (!container) return;
   container.innerHTML = buildHeaderHTML();
   const isHome = /\/html\/index\.html$/i.test(location.pathname);
+  const { appPage, clientPage } = getPathHelpers();
   // When header is fixed, add top padding to main equal to header height
   requestAnimationFrame(() => {
     try {
@@ -534,7 +543,7 @@ function mountHeader() {
   if (cartBtn) {
     cartBtn.addEventListener("click", (ev) => {
       ev.preventDefault();
-      const url = new URL("/html/cart.html", location.href).toString();
+      const url = new URL(appPage("cart.html"), location.href).toString();
       location.href = url;
     });
   }
@@ -548,7 +557,7 @@ function mountHeader() {
         const u = await apiCurrentUser();
         accountBtn.setAttribute(
           "href",
-          u ? "/html/account.html" : "/client/login.html"
+          u ? appPage("account.html") : clientPage("login.html")
         );
       } catch {}
     })();
@@ -557,12 +566,15 @@ function mountHeader() {
       try {
         const u = await apiCurrentUser();
         const url = new URL(
-          u ? "/html/account.html" : "/client/login.html",
+          u ? appPage("account.html") : clientPage("login.html"),
           location.href
         );
         location.href = url.toString();
       } catch {
-        location.href = new URL("/client/login.html", location.href).toString();
+        location.href = new URL(
+          clientPage("login.html"),
+          location.href
+        ).toString();
       }
     });
   }
@@ -585,7 +597,8 @@ function mountHeader() {
     const q = (searchInput?.value || "").trim();
     if (!isHome) {
       ev?.preventDefault?.();
-      const url = new URL("/html/index.html#catalog", location.href);
+      const url = new URL(appPage("index.html"), location.href);
+      url.hash = "#catalog";
       // Nếu khớp chính xác tên sản phẩm, điều hướng bằng ?product=ID để hiển thị đúng 1 sản phẩm
       if (q) {
         const list = await ensureProducts();
@@ -614,7 +627,8 @@ function mountHeader() {
           (p) => (p?.name || "").trim().toLowerCase() === q.toLowerCase()
         );
         if (found && found.id) {
-          const url = new URL("/html/index.html#catalog", location.href);
+          const url = new URL(appPage("index.html"), location.href);
+          url.hash = "#catalog";
           url.searchParams.set("product", found.id);
           location.href = url.toString();
         }

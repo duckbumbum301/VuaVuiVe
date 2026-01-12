@@ -101,7 +101,7 @@
       </table>
 
       <div class="nav-actions" aria-label="điều hướng">
-        <a class="btn btn-ghost" href="index.html">Trang chủ</a>
+        <a class="btn btn-ghost" href="../html/index.html">Trang chủ</a>
         <a class="btn btn-ghost" id="btnForgot" href="forgot_pw.html">Quên mật khẩu?</a>
         <a class="btn btn-ghost" href="register.html">Chưa có tài khoản? Đăng ký</a>
       </div>
@@ -140,7 +140,7 @@
             localStorage.removeItem("vvv_return_to");
             go(ret);
           } else {
-            go("../Home/Hôm/index.html");
+            go("../html/index.html");
           }
         }
       })();
@@ -235,10 +235,10 @@
               localStorage.removeItem("vvv_return_to");
               go(ret);
             } else {
-              go("../Home/Hôm/index.html");
+              go("../html/index.html");
             }
           } catch {
-            go("../Home/Hôm/index.html");
+            go("../html/index.html");
           }
         } catch (err) {
           msg.textContent = "Có lỗi xảy ra. Vui lòng thử lại.";

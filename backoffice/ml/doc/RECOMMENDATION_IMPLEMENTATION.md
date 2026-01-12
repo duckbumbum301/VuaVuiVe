@@ -17,27 +17,6 @@ Tài liệu này hướng dẫn chi tiết từng bước để xây dựng hệ
 
 ---
 
-## 🆚 So sánh với SEASON PAGE
-
-| Tính năng       | Recommended Page       | Season Page                          |
-| --------------- | ---------------------- | ------------------------------------ |
-| **Mục đích**    | **Cá nhân hóa cao**    | Phù hợp với thời điểm                |
-| **Input chính** | **User history**       | Season + Weather + Date              |
-| **CF**          | **Standard MF (50%)**  | Seasonal CF (30%)                    |
-| **Apriori**     | **Global rules (30%)** | S-Apriori với seasonal weights (30%) |
-| **Content**     | **20%**                | -                                    |
-| **Trend**       | -                      | Time-series analysis (25%)           |
-| **Weather**     | -                      | Weather-aware (15%)                  |
-| **Re-train**    | **Weekly**             | Daily (seasonal patterns thay đổi)   |
-| **Best for**    | **Returning users**    | All users + seasonal context         |
-
-**Kết luận:**
-
-- **Recommended Page** = Personalization-first
-- **Season Page** = Context-first (seasonal + weather)
-
----
-
 ## 📁 Cấu trúc File cần tạo
 
 ```
@@ -45,7 +24,6 @@ Group5_FinalProject/
 ├── backoffice/
 │   ├── ml/
 │   │   ├── models/
-│   │   │   ├── SeasonalRecommender.js
 │   │   │   └── TimeAwareRecommender.js
 │   │   ├── scripts/
 │   │   │   ├── train-ml-model.js
@@ -2780,26 +2758,6 @@ Sau khi hoàn thành tài liệu này, bạn sẽ có một hệ thống recomme
 3. 📅 User-user collaborative filtering (currently only item-item)
 4. 📅 Neural Collaborative Filtering upgrade (Step 11.6)
 5. 📅 Multi-armed bandit for exploration/exploitation
-
-### 🔗 Integration với Season Page
-
-Hệ thống này (Recommended Page) có thể hoạt động song song với [SEASONAL_RECOMMENDATION_IMPLEMENTATION.md](SEASONAL_RECOMMENDATION_IMPLEMENTATION.md):
-
-| Aspect         | Recommended Page       | Season Page                        |
-| -------------- | ---------------------- | ---------------------------------- |
-| **Algorithms** | CF + Apriori + Content | S-CF + S-Apriori + Trend + Weather |
-| **Weights**    | 50% + 30% + 20%        | 30% + 30% + 25% + 15%              |
-| **Context**    | User history           | Season + Time + Weather            |
-| **Retraining** | Daily                  | Weekly                             |
-| **Use Case**   | General shopping       | Seasonal shopping                  |
-
-**Shared Components:**
-
-- Base Matrix Factorization logic
-- Base Apriori implementation
-- Product embeddings
-- Cache infrastructure
-- API structure
 
 ### 📚 Learning Resources
 

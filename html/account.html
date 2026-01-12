@@ -7,11 +7,17 @@
     <meta name="description" content="Trang tài khoản người dùng Vựa Vui Vẻ" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../assets/css/reviews.css" />
     <!-- Cache busting + no-cache for go live -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
   </head>
@@ -19,7 +25,7 @@
     <header id="siteHeader" class="header"></header>
 
     <main class="section" aria-label="Trang Tài khoản">
-      <div class="container" style="max-width: 1100px;">
+      <div class="container" style="max-width: 1100px">
         <div class="title"><h2>Tài khoản</h2></div>
         <div class="account-tabs">
           <nav class="account-nav">
@@ -39,47 +45,134 @@
           <div class="account-content">
             <section id="accountProfilePanel" class="account-panel">
               <form id="accountForm" class="contact" style="padding: 16px">
-                <input class="input" type="text" name="name" placeholder="Họ và tên" autocomplete="name" required />
-                <input class="input" type="email" name="email" placeholder="Email (không thay đổi sau đăng ký)" autocomplete="email" readonly aria-readonly="true" />
-                <input class="input" type="tel" name="phone" placeholder="Số điện thoại (không thay đổi sau đăng ký)" autocomplete="tel" inputmode="numeric" pattern="\d{9,11}" title="Nhập 9–11 chữ số" readonly aria-readonly="true" />
-                <p class="muted" id="acctAddrInline" role="status" aria-live="polite">Địa chỉ mặc định: </p>
-                <textarea class="input" name="address" rows="3" placeholder="Địa chỉ giao hàng..." autocomplete="street-address" required></textarea>
-                <button class="btn btn--pri" type="submit">Lưu thông tin</button>
-                <p class="muted" id="accountMsg" role="status" aria-live="polite"></p>
+                <input
+                  class="input"
+                  type="text"
+                  name="name"
+                  placeholder="Họ và tên"
+                  autocomplete="name"
+                  required
+                />
+                <input
+                  class="input"
+                  type="email"
+                  name="email"
+                  placeholder="Email (không thay đổi sau đăng ký)"
+                  autocomplete="email"
+                  readonly
+                  aria-readonly="true"
+                />
+                <input
+                  class="input"
+                  type="tel"
+                  name="phone"
+                  placeholder="Số điện thoại (không thay đổi sau đăng ký)"
+                  autocomplete="tel"
+                  inputmode="numeric"
+                  pattern="\d{9,11}"
+                  title="Nhập 9–11 chữ số"
+                  readonly
+                  aria-readonly="true"
+                />
+                <p
+                  class="muted"
+                  id="acctAddrInline"
+                  role="status"
+                  aria-live="polite"
+                >
+                  Địa chỉ mặc định:
+                </p>
+                <textarea
+                  class="input"
+                  name="address"
+                  rows="3"
+                  placeholder="Địa chỉ giao hàng..."
+                  autocomplete="street-address"
+                  required
+                ></textarea>
+                <button class="btn btn--pri" type="submit">
+                  Lưu thông tin
+                </button>
+                <p
+                  class="muted"
+                  id="accountMsg"
+                  role="status"
+                  aria-live="polite"
+                ></p>
               </form>
             </section>
 
             <section id="accountOrdersPanel" class="account-panel" hidden>
-              <div id="accountOrdersBody" class="orders-body" style="padding: 16px"></div>
+              <div
+                id="accountOrdersBody"
+                class="orders-body"
+                style="padding: 16px"
+              ></div>
             </section>
 
             <section id="accountPasswordPanel" class="account-panel" hidden>
-              <form id="changePasswordForm" class="contact" style="padding: 16px">
-                <input class="input" type="password" name="current" placeholder="Mật khẩu hiện tại" autocomplete="current-password" required />
-                <input class="input" type="password" name="new" placeholder="Mật khẩu mới" autocomplete="new-password" required />
-                <input class="input" type="password" name="confirm" placeholder="Xác nhận mật khẩu mới" autocomplete="new-password" required />
+              <form
+                id="changePasswordForm"
+                class="contact"
+                style="padding: 16px"
+              >
+                <input
+                  class="input"
+                  type="password"
+                  name="current"
+                  placeholder="Mật khẩu hiện tại"
+                  autocomplete="current-password"
+                  required
+                />
+                <input
+                  class="input"
+                  type="password"
+                  name="new"
+                  placeholder="Mật khẩu mới"
+                  autocomplete="new-password"
+                  required
+                />
+                <input
+                  class="input"
+                  type="password"
+                  name="confirm"
+                  placeholder="Xác nhận mật khẩu mới"
+                  autocomplete="new-password"
+                  required
+                />
                 <button class="btn btn--pri" type="submit">Đổi mật khẩu</button>
-                <p class="muted" id="pwMsg" role="status" aria-live="polite"></p>
+                <p
+                  class="muted"
+                  id="pwMsg"
+                  role="status"
+                  aria-live="polite"
+                ></p>
               </form>
             </section>
           </div>
         </div>
-        <div class="drawer__foot" style="margin-top: 16px;">
+        <div class="drawer__foot" style="margin-top: 16px">
           <button class="btn btn--danger" id="btnLogout">Đăng xuất</button>
         </div>
       </div>
     </main>
 
-    <footer class="site-footer" style="background:url('../images/brand/footer.png') center/cover no-repeat; color:#fff7e4;">
+    <footer
+      class="site-footer"
+      style="
+        background: url('../images/brand/footer.png') center/cover no-repeat;
+        color: #fff7e4;
+      "
+    >
       <div class="container">
         <div class="sf-grid">
           <div class="sf-cols">
             <div class="sf-col">
               <h4>Trang chủ</h4>
               <ul>
-                <li><a href="#catalog">Sản phẩm</a></li>
-                <li><a href="#flashsale">Flash Sale</a></li>
-                <li><a href="#cart">Giỏ hàng</a></li>
+                <li><a href="index.html#catalog">Sản phẩm</a></li>
+                <li><a href="index.html#flashsale">Flash Sale</a></li>
+                <li><a href="cart.html">Giỏ hàng</a></li>
               </ul>
             </div>
             <div class="sf-col">
@@ -104,7 +197,9 @@
                 <li>Địa chỉ liên hệ: Vựa Vui Vẻ</li>
               </ul>
             </div>
-            <div class="sf-legal">Điều khoản dịch vụ | Chính sách giao hàng | Chính sách đổi trả</div>
+            <div class="sf-legal">
+              Điều khoản dịch vụ | Chính sách giao hàng | Chính sách đổi trả
+            </div>
           </div>
           <div class="sf-brand">
             <div class="sf-contact">
@@ -126,9 +221,9 @@
     <script src="../assets/js/reviews.js"></script>
     <script>
       // Khởi tạo review UI cho danh sách đơn hàng
-      window.addEventListener('DOMContentLoaded', function(){
+      window.addEventListener("DOMContentLoaded", function () {
         if (window.initReviews) {
-          window.initReviews({ rootSelector: '#accountOrdersBody' });
+          window.initReviews({ rootSelector: "#accountOrdersBody" });
         }
       });
     </script>
