@@ -57,3 +57,31 @@ out/
 *.mkv
 *.flv
 *.wmv
+
+# ML Recommender artifacts (large files)
+VuaVuiVe_Recommender/data/01_raw/*.csv
+VuaVuiVe_Recommender/data/02_processed/*.parquet
+VuaVuiVe_Recommender/data/03_features/*.npz
+VuaVuiVe_Recommender/data/03_features/*.json
+VuaVuiVe_Recommender/models/*.npz
+VuaVuiVe_Recommender/models/*.pkl
+
+# Visualizations (generated charts)
+VuaVuiVe_Recommender/visualizations/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Python virtual environment
+.venv/
+venv/
+env/
+ENV/

@@ -1,0 +1,17 @@
+# Core dependencies
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Collaborative Filtering
+implicit>=0.7.0
+
+# Parquet support
+pyarrow>=12.0.0
+
+# Optional: Jupyter for notebooks
+jupyter>=1.0.0
+notebook>=6.5.0
+
+# Optional: Progress bars
+tqdm>=4.65.0
