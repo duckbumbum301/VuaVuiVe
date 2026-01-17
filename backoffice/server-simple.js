@@ -24,6 +24,125 @@ const recommender = new TimeAwareRecommender({
 
 const PORT = 3000;
 
+// ====== SYNC json-server db.json -> backoffice/data/*.json ======
+// NOTE: data/orders.json is also consumed by the ML adapter; normalize items to array format.
+const DATA_DIR = path.join(__dirname, "data");
+const DATA_FILES = {
+  products: path.join(DATA_DIR, "products.json"),
+  orders: path.join(DATA_DIR, "orders.json"),
+  users: path.join(DATA_DIR, "users.json"),
+  auditLogs: path.join(DATA_DIR, "auditLogs.json"),
+};
+
+function safeWriteJSON(filePath, data) {
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
+    return true;
+  } catch (error) {
+    console.error(
+      `❌ Error syncing ${path.basename(filePath)}:`,
+      error.message
+    );
+    return false;
+  }
+}
+
+function normalizeOrderItems(items, productsById) {
+  if (Array.isArray(items)) {
+    return items
+      .map((item) => {
+        const productId = String(item?.productId ?? item?.id ?? "");
+        const quantity = Number.parseInt(item?.quantity ?? item?.qty ?? 0, 10);
+        const product = productsById.get(productId);
+        const price = Number(item?.price ?? product?.price ?? 0);
+        const productName =
+          item?.productName ?? item?.name ?? product?.name ?? "";
+        const subtotal = Number(item?.subtotal ?? price * quantity);
+        return { productId, productName, quantity, price, subtotal };
+      })
+      .filter((i) => i.productId && Number(i.quantity) > 0);
+  }
+
+  if (items && typeof items === "object") {
+    return Object.entries(items)
+      .map(([productId, quantityRaw]) => {
+        const quantity = Number.parseInt(quantityRaw, 10);
+        const product = productsById.get(String(productId));
+        const price = Number(product?.price ?? 0);
+        const productName = product?.name ?? "";
+        const subtotal = price * quantity;
+        return {
+          productId: String(productId),
+          productName,
+          quantity,
+          price,
+          subtotal,
+        };
+      })
+      .filter((i) => i.productId && Number(i.quantity) > 0);
+  }
+
+  return [];
+}
+
+function normalizeOrdersForData(dbState) {
+  const products = Array.isArray(dbState?.products) ? dbState.products : [];
+  const productsById = new Map(products.map((p) => [String(p.id), p]));
+  const orders = Array.isArray(dbState?.orders) ? dbState.orders : [];
+
+  return orders.map((order) => {
+    const normalizedItems = normalizeOrderItems(order?.items, productsById);
+    const computedTotal = normalizedItems.reduce(
+      (sum, item) => sum + Number(item.subtotal || 0),
+      0
+    );
+
+    const createdAt =
+      order?.createdAt ?? order?.created_at ?? order?.created_at ?? null;
+    const updatedAt =
+      order?.updatedAt ?? order?.updated_at ?? order?.updatedAt ?? null;
+    const status =
+      order?.status ?? order?.delivery_status ?? order?.deliveryStatus ?? null;
+
+    const customerName =
+      order?.customerName ?? order?.user?.name ?? order?.customer?.name ?? null;
+    const email = order?.email ?? order?.user?.email ?? null;
+    const phone = order?.phone ?? order?.user?.phone ?? null;
+    const address = order?.address ?? order?.shippingAddress ?? null;
+
+    const totalAmountRaw =
+      order?.totalAmount ?? order?.total ?? order?.total_amount ?? undefined;
+    const totalAmount = Number(totalAmountRaw ?? computedTotal);
+
+    return {
+      ...order,
+      customerName,
+      email,
+      phone,
+      address,
+      items: normalizedItems,
+      totalAmount,
+      status,
+      createdAt,
+      updatedAt,
+    };
+  });
+}
+
+function syncDbToDataFiles(dbState) {
+  if (!dbState || typeof dbState !== "object") return;
+
+  const products = Array.isArray(dbState.products) ? dbState.products : [];
+  const orders = normalizeOrdersForData(dbState);
+  const users = Array.isArray(dbState.users) ? dbState.users : [];
+  const auditLogs = Array.isArray(dbState.auditLogs) ? dbState.auditLogs : [];
+
+  safeWriteJSON(DATA_FILES.products, products);
+  safeWriteJSON(DATA_FILES.orders, orders);
+  safeWriteJSON(DATA_FILES.users, users);
+  safeWriteJSON(DATA_FILES.auditLogs, auditLogs);
+}
+
 // Expose database to middleware
 server.use((req, res, next) => {
   req.app.db = router.db.getState();
@@ -90,6 +209,7 @@ server.patch("/api/orders/:id/paid", (req, res) => {
   });
 
   router.db.write();
+  syncDbToDataFiles(router.db.getState());
   console.log(`✅ Order ${id} marked as PAID + stock deducted`);
 
   res.json({ success: true, order });
@@ -119,6 +239,7 @@ server.patch("/api/orders/:id/payment-failed", (req, res) => {
   // ❌ KHÔNG TRỪ STOCK (VNPay failed)
 
   router.db.write();
+  syncDbToDataFiles(router.db.getState());
   console.log(`❌ Order ${id} marked as PAYMENT FAILED (stock NOT deducted)`);
 
   res.json({ success: true, order });
@@ -175,34 +296,22 @@ server.use(productSyncMiddleware);
 
 // Custom render để sync sau khi json-server xử lý
 router.render = (req, res) => {
-  // Kiểm tra nếu là POST/PUT/PATCH/DELETE /products
-  const isProductRoute =
-    req.path === "/products" || req.path.startsWith("/products/");
   const isModifyingRequest = ["POST", "PUT", "PATCH", "DELETE"].includes(
     req.method
   );
+  if (isModifyingRequest && res.statusCode >= 200 && res.statusCode < 300) {
+    const root = (req.path.split("/")[1] || "").trim();
+    const shouldSync = ["products", "orders", "users", "auditLogs"].includes(
+      root
+    );
 
-  if (
-    isProductRoute &&
-    isModifyingRequest &&
-    res.statusCode >= 200 &&
-    res.statusCode < 300
-  ) {
-    try {
-      const db = router.db.getState();
-      if (db && db.products) {
-        const PRODUCTS_FILE = path.join(__dirname, "data", "products.json");
-        fs.writeFileSync(
-          PRODUCTS_FILE,
-          JSON.stringify(db.products, null, 2),
-          "utf-8"
-        );
-        console.log(
-          `📝 Synced ${db.products.length} products to data/products.json`
-        );
+    // Also sync after order mutations because stock changes happen via middleware.
+    if (shouldSync) {
+      try {
+        syncDbToDataFiles(router.db.getState());
+      } catch (error) {
+        console.error("❌ Error syncing data files:", error.message);
       }
-    } catch (error) {
-      console.error("❌ Error syncing products:", error.message);
     }
   }
 

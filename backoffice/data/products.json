@@ -2,14 +2,11 @@
   {
     "id": "100",
     "name": "Rau muống (500g)",
-    "category": "veg",
-    "subcategory": "leaf",
-    "price": 15000,
-    "unit": "gói",
+    "category": "Rau củ",
+    "price": 36000,
     "stock": 44,
     "image": "../images/VEG/leaf/raumuong.jpg",
-    "description": "Rau muống (500g) - Sản phẩm chất lượng cao",
-    "popular": 11
+    "status": "active"
   },
   {
     "id": "101",
@@ -265,7 +262,7 @@
     "name": "Cam tươi (1kg)",
     "category": "Rau củ",
     "price": 35000,
-    "stock": 28,
+    "stock": 27,
     "image": "../images/FRUIT/Mixed/Cam.jpg",
     "status": "active"
   },
@@ -283,7 +280,7 @@
     "name": "Nho nhập khẩu (500g)",
     "category": "Rau củ",
     "price": 120000,
-    "stock": 50,
+    "stock": 47,
     "image": "..\\images\\bsthieu\\nhonhaukhau.png",
     "status": "active"
   },
@@ -310,7 +307,7 @@
     "name": "Chuối sấy (100g)",
     "category": "Rau củ",
     "price": 45000,
-    "stock": 28,
+    "stock": 27,
     "image": "../images/SWEET/dried/chuối sấy.jpg",
     "status": "active"
   },
@@ -387,7 +384,7 @@
     "subcategory": "pork",
     "price": 70000,
     "unit": "gói",
-    "stock": 45,
+    "stock": 35,
     "image": "../images/MEAT/pork/baroi.jpg",
     "description": "Thịt heo ba rọi (500g) - Sản phẩm chất lượng cao",
     "popular": 21
@@ -399,7 +396,7 @@
     "subcategory": "pork",
     "price": 85000,
     "unit": "gói",
-    "stock": 40,
+    "stock": 36,
     "image": "../images/MEAT/pork/suon.jpg",
     "description": "Sườn non (500g) - Sản phẩm chất lượng cao",
     "popular": 55
@@ -447,7 +444,7 @@
     "subcategory": "poultry",
     "price": 85000,
     "unit": "gói",
-    "stock": 36,
+    "stock": 24,
     "image": "../images/MEAT/poultry/dui.jpg",
     "description": "Đùi gà ta (1kg) - Sản phẩm chất lượng cao",
     "popular": 92
@@ -459,7 +456,7 @@
     "subcategory": "redmeat",
     "price": 60000,
     "unit": "gói",
-    "stock": 43,
+    "stock": 37,
     "image": "../images/MEAT/redmeat/bapbo.jpg",
     "description": "Bắp bò - Sản phẩm chất lượng cao",
     "popular": 53
@@ -495,7 +492,7 @@
     "subcategory": "seafood",
     "price": 85000,
     "unit": "gói",
-    "stock": 42,
+    "stock": 39,
     "image": "../images/MEAT/seafood/râu mực.jpg",
     "description": "Râu mực - Sản phẩm chất lượng cao",
     "popular": 24
@@ -579,7 +576,7 @@
     "subcategory": "can",
     "price": 10000,
     "unit": "gói",
-    "stock": 56,
+    "stock": 50,
     "image": "../images/DRINK/can/7upsodachanh.jpg",
     "description": "Soda chanh 7 Up (320ml) - Sản phẩm chất lượng cao",
     "popular": 73
@@ -591,7 +588,7 @@
     "subcategory": "can",
     "price": 9000,
     "unit": "gói",
-    "stock": 43,
+    "stock": 39,
     "image": "../images/DRINK/can/fantadau.jpg",
     "description": "Nước ngọt Fanta hương dâu lon (320ml) - Sản phẩm chất lượng cao",
     "popular": 22
@@ -627,7 +624,7 @@
     "subcategory": "rice",
     "price": 38000,
     "unit": "gói",
-    "stock": 34,
+    "stock": 29,
     "image": "../images/DRY/rice/st25.jpg",
     "description": "Gạo ST25 (1kg) - Sản phẩm chất lượng cao",
     "popular": 31
@@ -639,7 +636,7 @@
     "subcategory": "rice",
     "price": 32000,
     "unit": "gói",
-    "stock": 40,
+    "stock": 30,
     "image": "../images/DRY/rice/gaothom.jpg",
     "description": "Gạo thơm Jasmine (1kg) - Sản phẩm chất lượng cao",
     "popular": 29
@@ -870,7 +867,7 @@
     "subcategory": "bags",
     "price": 22000,
     "unit": "gói",
-    "stock": 45,
+    "stock": 44,
     "image": "../images/HOUSEHOLD/bags/túi đựng rác màu.jpg",
     "description": "Túi đựng rác màu - Sản phẩm chất lượng cao",
     "popular": 92
@@ -942,7 +939,7 @@
     "subcategory": "kitchenware",
     "price": 40000,
     "unit": "gói",
-    "stock": 28,
+    "stock": 27,
     "image": "../images/HOUSEHOLD/kitchenware/dao bào.jpg",
     "description": "Dao bào - Sản phẩm chất lượng cao",
     "popular": 49
@@ -1035,7 +1032,7 @@
     "subcategory": "snack",
     "price": 18000,
     "unit": "gói",
-    "stock": 27,
+    "stock": 21,
     "image": "../images/SWEET/SNACK/oneone.jpg",
     "description": "Bánh gạo One One (100g) - Sản phẩm chất lượng cao",
     "popular": 22
@@ -1059,7 +1056,7 @@
     "subcategory": "candy",
     "price": 18000,
     "unit": "gói",
-    "stock": 38,
+    "stock": 37,
     "image": "../images/SWEET/CANDY/alpenliebe.jpg",
     "description": "Kẹo Alpenliebe (120g) - Sản phẩm chất lượng cao",
     "popular": 40
@@ -1107,7 +1104,7 @@
     "subcategory": "dried",
     "price": 50000,
     "unit": "gói",
-    "stock": 16,
+    "stock": 11,
     "image": "../images/SWEET/dried/mít sấy.jpg",
     "description": "Mít sấy - Sản phẩm chất lượng cao",
     "popular": 101

@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/recommended-ml.css" />
     <link rel="stylesheet" href="../assets/css/reviews.css" />
     <meta
       http-equiv="Cache-Control"
@@ -36,53 +37,90 @@
 
     <main class="section" aria-label="Gợi ý cá nhân" style="flex: 1 0 auto">
       <div class="container" style="max-width: 1160px">
+        <!-- Page Hero -->
         <div class="page-hero">
-          <div>
-            <p class="eyebrow">Cá nhân hóa</p>
+          <div class="page-hero__content">
+            <span class="eyebrow"> Cá nhân hóa</span>
             <h1 class="page-title">Gợi ý dành riêng cho bạn</h1>
+            <p class="page-description">
+              Chúng tôi chọn lọc sản phẩm dựa trên sở thích và lịch sử mua sắm
+              của bạn
+            </p>
+            <!-- User Interest Chips (từ ML) -->
             <div class="chip-row" id="recSignal"></div>
           </div>
         </div>
 
+        <!-- Section 1: Personal Recommendations -->
         <section class="section-card">
           <div class="section-head">
-            <div>
-              <p class="eyebrow">Cho riêng bạn</p>
-              <h2>Tiếp nối những gì bạn thích</h2>
-              <p class="muted" id="recStatus" aria-live="polite">
+            <div class="section-head__text">
+              <span class="eyebrow"> Cho riêng bạn</span>
+              <h2 class="section-title">Tiếp nối những gì bạn thích</h2>
+              <p class="section-description" id="recStatus">
                 Đang phân tích đơn hàng...
               </p>
             </div>
-            <button class="btn btn--outline" id="recRefreshBtn">Làm mới</button>
+            <button class="btn btn--outline btn--refresh" id="recRefreshBtn">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <polyline points="1 20 1 14 7 14"></polyline>
+                <path
+                  d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"
+                ></path>
+              </svg>
+              Làm mới
+            </button>
           </div>
-          <div id="recPersonalGrid" class="grid" aria-live="polite"></div>
+          <div
+            class="products-grid"
+            id="recPersonalGrid"
+            aria-live="polite"
+          ></div>
         </section>
 
+        <!-- Section 2: Similar Products -->
         <section class="section-card">
           <div class="section-head">
-            <div>
-              <p class="eyebrow">Gần giống khẩu vị</p>
-              <h2>Sản phẩm tương tự</h2>
-              <p class="muted">
+            <div class="section-head__text">
+              <span class="eyebrow"> Gần giống khẩu vị</span>
+              <h2 class="section-title">Sản phẩm tương tự</h2>
+              <p class="section-description">
                 Ưu tiên cùng danh mục hoặc tiểu mục bạn mua nhiều nhất.
               </p>
             </div>
           </div>
-          <div id="recSimilarGrid" class="grid" aria-live="polite"></div>
+          <div
+            class="products-grid"
+            id="recSimilarGrid"
+            aria-live="polite"
+          ></div>
         </section>
 
+        <!-- Section 3: Trending -->
         <section class="section-card">
           <div class="section-head">
-            <div>
-              <p class="eyebrow">Xu hướng</p>
-              <h2>Mua nhiều tại Vựa Vui Vẻ</h2>
-              <p class="muted">
+            <div class="section-head__text">
+              <span class="eyebrow"> Xu hướng</span>
+              <h2 class="section-title">Mua nhiều tại Vựa Vui Vẻ</h2>
+              <p class="section-description">
                 Top sản phẩm được thêm giỏ nhiều nhất, dùng khi chưa có lịch sử
                 mua.
               </p>
             </div>
           </div>
-          <div id="recTrendingGrid" class="grid" aria-live="polite"></div>
+          <div
+            class="products-grid"
+            id="recTrendingGrid"
+            aria-live="polite"
+          ></div>
         </section>
       </div>
     </main>
@@ -147,6 +185,6 @@
 
     <script src="../assets/js/reviews.js"></script>
     <script type="module" src="../js/header.js"></script>
-    <script type="module" src="../js/recommended.js"></script>
+    <script type="module" src="../js/recommended-ml.js"></script>
   </body>
 </html>

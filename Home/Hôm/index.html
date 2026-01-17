@@ -438,16 +438,6 @@
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-  <script type="module">
-    // Điều chỉnh đường dẫn cho các trang con
-    document.querySelectorAll('header.header a[href="recipes.html"]').forEach((a) => a.setAttribute('href', '/html/recipes.html'));
-    document.querySelectorAll('header.header a[href="aboutus.html"]').forEach((a) => a.setAttribute('href', '/html/aboutus.html'));
-    const logoImg = document.querySelector('header.header .logo__img');
-    if (logoImg) logoImg.src = '/images/brand/LogoVVV.png';
-
-    
-    
-  </script>
   <script src="script.js"></script>
 </body>
 </html>

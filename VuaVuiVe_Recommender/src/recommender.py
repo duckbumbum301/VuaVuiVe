@@ -4,6 +4,9 @@ Kết hợp 3 nguồn: CF (NMF) + Basket (co-occurrence) + Popular
 """
 from __future__ import annotations
 
+import warnings
+warnings.filterwarnings('ignore')
+
 import json
 import pickle
 from pathlib import Path

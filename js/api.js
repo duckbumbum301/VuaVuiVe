@@ -216,8 +216,8 @@ export function calcShippingFee(addressText, subtotal) {
   let fee = /q\.\s*\d+|quận|tp\./.test(txt)
     ? 15000
     : /h\.\s*|huyện/.test(txt)
-    ? 25000
-    : 20000;
+      ? 25000
+      : 20000;
   if (subtotal >= 300000) fee = 0;
   return fee;
 }
@@ -261,8 +261,9 @@ export async function apiCreateOrder(orderPayload) {
     ...orderPayload,
     created_at: createdAt,
     tracking,
-    payment_status: "pending", // chờ thanh toán hoặc COD
-    delivery_status: "placed",
+    // Respect caller-provided statuses (e.g. COD = unpaid, VNPAY = pending)
+    payment_status: orderPayload?.payment_status ?? "pending",
+    delivery_status: orderPayload?.delivery_status ?? "placed",
   };
 
   try {

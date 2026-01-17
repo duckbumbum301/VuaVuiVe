@@ -7,9 +7,22 @@ function getPathHelpers() {
   const pathName = (location.pathname || "").toLowerCase();
   const inHtml = pathName.includes("/html/");
   const inClient = pathName.includes("/client/");
-  const appPage = (file) => (inHtml ? file : `../html/${file}`);
-  const clientPage = (file) => (inClient ? file : `../client/${file}`);
-  return { inHtml, inClient, appPage, clientPage };
+  const inHome = pathName.includes("/home/");
+
+  // Nếu đang ở /Home/ thì cần đi lên 2 cấp ../../html/
+  const appPage = (file) => {
+    if (inHtml) return file;
+    if (inHome) return `../../html/${file}`;
+    return `../html/${file}`;
+  };
+
+  const clientPage = (file) => {
+    if (inClient) return file;
+    if (inHome) return `../../client/${file}`;
+    return `../client/${file}`;
+  };
+
+  return { inHtml, inClient, inHome, appPage, clientPage };
 }
 
 function sumCartQty() {
@@ -28,30 +41,45 @@ function buildHeaderHTML() {
       <line x1="16.65" y1="16.65" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
     </svg>`;
 
-  const { appPage } = getPathHelpers();
-  const homeHref = appPage("index.html");
-  const isHome = /\/html\/index\.html$/i.test(location.pathname);
-  const catalogHref = isHome ? "#catalog" : `${homeHref}#catalog`;
+  const { appPage, inHome, inHtml } = getPathHelpers();
+
+  // True Home page = /Home/Hôm/index.html
+  const trueHomeHref = inHome
+    ? "index.html" // Already in /Home/Hôm/
+    : inHtml
+    ? "../Home/Hôm/index.html" // From /html/
+    : "../../Home/Hôm/index.html"; // From /client/
+
+  // Products page = /html/index.html
+  const productsHref = appPage("index.html");
+  const isProductsPage = /\/html\/index\.html$/i.test(location.pathname);
+  const catalogHref = isProductsPage ? "#catalog" : `${productsHref}#catalog`;
+
+  // Logo path - adjust for Home folder structure
+  const logoPath = inHome
+    ? "../../images/brand/LogoVVV.png"
+    : "../images/brand/LogoVVV.png";
+
   const makeProductHref = (id) => {
     const pid = String(id);
-    return isHome
+    return isProductsPage
       ? `?product=${pid}#catalog`
-      : `${homeHref}?product=${pid}#catalog`;
+      : `${productsHref}?product=${pid}#catalog`;
   };
 
   return `
     <div class="container header__row">
-      <a href="${homeHref}" class="logo" aria-label="Trang chủ Vựa Vui Vẻ"><img src="../images/brand/LogoVVV.png" alt="Vựa Vui Vẻ" class="logo__img" /></a>
+      <a href="${trueHomeHref}" class="logo" aria-label="Trang chủ Vựa Vui Vẻ"><img src="${logoPath}" alt="Vựa Vui Vẻ" class="logo__img" /></a>
       <nav class="nav" aria-label="Điều hướng chính">
         <div class="nav-item nav-item--dropdown" aria-expanded="false">
-          <button
+          <a
+            href="${catalogHref}"
             class="nav-link nav-link--dropdown"
             id="productsMenuToggle"
             aria-expanded="false"
             aria-haspopup="true"
             aria-controls="productsMegaMenu"
-            aria-label="Mở menu Sản phẩm"
-            type="button"
+            aria-label="Sản phẩm và danh mục"
           >
             Sản phẩm
             <svg
@@ -70,7 +98,7 @@ function buildHeaderHTML() {
                 stroke-linejoin="round"
               />
             </svg>
-          </button>
+          </a>
           <div
             id="productsMegaMenu"
             class="mega-menu"
